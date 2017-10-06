@@ -8,9 +8,16 @@
   <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="Portfolio.css">
+    <script>
+      function getCurYear() {
+        var curYear = new Date();
+        var displayDate = curYear.getFullYear();
+        document.getElementById("dateGoesHere").innerHTML = displayDate;
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="getCurYear()">
     <header>
       <nav>
         <table id="nav-bar-links-table">
@@ -49,8 +56,8 @@
 
   <footer>
     <div id="footer-contents">
-      <p>&copy; Liam Clifford, JS_Date_here</p>
-      <p>Last Updated - 05/10/17</p>
+      <p style="float: left;">&copy; Liam Clifford, <span id="dateGoesHere"></span></p>
+      <p style="float: right;">Last Updated - 05/10/17</p>
     </div>
   </footer>
   </body>
