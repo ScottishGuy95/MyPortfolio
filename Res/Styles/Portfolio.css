@@ -1,0 +1,705 @@
+/*
+  CM1101
+  Computer Information Systems
+  Liam Clifford
+  1713749
+  Online Portfolio Project
+*/
+
+
+@media only screen and (min-width: 1025px) and (max-width: 2560px) {	/* Desktop screen sizes */
+  /* Used to import a custom font, used as a backup if the internal file font fails*/
+  @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+  /* Custom font used for the website, source:
+    https://fonts.google.com/specimen/Quicksand
+    Also uses the Georgia font as a fallback if the 2 custom fonts are to fail
+  */
+  @font-face {
+      font-family: quickSandLocal;
+      src: url('Res/Fonts/Quicksand-Regular.otf');
+  }
+
+
+  html {
+    font-family: 'quickSandLocal', 'Quicksand', Georgia;  /* Sets the font for the entire page*/
+    background-color: lightgrey;                          /* Sets the background colour behind the content */
+  }
+
+  body {
+    margin: 0;                                            /* Remove the margin */
+    overflow: hidden;                                     /* Hides all of the scrollbars in the body */
+  }
+
+  h1 {
+      text-decoration: underline;
+  }
+
+  header {
+    height: 60px;
+  }
+
+  .section {  /* Each 'section' of the website, e.g. Portfolio, Skills, Contact Me */
+    text-align: center;                                   /* Centers the text inside each section */
+    width: 100vw;                                          /* Sets the width to be 100% of the screen */
+    height: 100vw;                                        /* Sets the height to be 100% of the viewports width */
+    overflow-x: hidden;                                   /* Hides the scrollbars on the x-plane */
+    overflow-y: hidden;                                   /* Hides the scrollbars on the y-plane */
+    transform: rotate(90deg);                             /* Rotates the container by 90 degrees */
+  }
+
+  #main-container .section > div { /* mainly for the font inside the div */
+
+  }
+
+  #main-container { /* */
+    width: 100vw;                                          /* Sets the width to be 100% of the screen */
+    height: 100vw;                                        /* Sets the height to be 100% of the viewports width */
+    overflow-y: scroll;                                   /* Sets the y-plane scrollbar to be shown */
+    overflow-x: hidden;                                   /* Hides the scrollbar on the x-plane */
+    transform: rotate(-90deg);                            /* Rotates the container by -90 degrees */
+  }
+
+   /* Gives each section its own colour */
+  .one {
+    background-color: #45CCFF;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .two {
+    background-color: #49E83E;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .three {
+    background-color: #EDDE05;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .four {
+    background-color: #E84B30;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .five {
+    background-color: #E2631C;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+
+  .sectionContents {
+    padding: 2%;
+  }
+
+  .aboutMe {
+    text-align: left;
+  }
+
+  .contactMe {
+   text-align: right;
+ }
+
+  #phoneMap {
+    display: none;
+  }
+
+  nav {
+    background-color: #333;                               /* Adds a background colour to the naviagation bar */
+    color: white;                                         /* Sets all of the font in the navigation bar to be white */
+    width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
+    height: 7vw;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+  }
+
+  a {
+    display: block;                                       /* Sets all of hyperlinks to be shown in a small block container */
+    color: white;                                         /* Sets the font of all hyperlinks to be white, contrasting the background colour */
+    text-align: center;                                   /* Centers all of the hyperlink text */
+    padding: 20px;                                        /* Adds 20px of padding to each hyperlink on all sides, used to make each link clearer */
+    text-decoration: none;                                /* Removes all text-decoration on eahc hyperlink ( such as underlines ) */
+    font-size: 20px;                                      /* Sets the font-size of each hyperlink to be 20px */
+  }
+
+  footer {
+    overflow: hidden;                                     /* Hides the scrollbar from the footer */
+    background-color: #333;                               /* Sets the background colour of the footer */
+    color: white;                                         /* Sets the font colour of all text in the hyperlink */
+    position: fixed;                                      /* Ensures that the footer is always at the bottom of the screen */
+    bottom: 0;                                            /* Sets the bottom edge of the container to be at the bottom of the screen */
+    width: 100%;                                          /* Sets the width of the footer to be 100% of the screens width */
+    height: 60px;                                          /* Sets the height of the footer to be 7% of the viewports height */
+  }
+
+
+  #nav-bar-links-table {
+    width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
+    text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
+  }
+
+  #nav-bar-links-table th {
+    border-left: 1px solid red;                           /* Adds a single red lined border to the left side of each table header */
+  }
+
+  #title-text {
+    padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
+    font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+    cursor: pointer;
+  }
+
+  .phone-table, #title-text-phone {
+    display: none;
+  }
+
+  .cell-with-border {
+      border-left: 1px solid red;                         /* */
+  }
+
+
+  #centre-text-block {
+    margin: auto;                                         /* */
+    margin-top: 100px;                                    /* */
+    margin-bottom: 100px;                                 /* */
+    width: 100%;                                          /* */
+  }
+
+  #centre-text-block-contents {
+    text-align: center;                                   /* */
+    font-size: 20px;                                      /* */
+  }
+
+  #footer-contents {
+    display: block;                                       /* */
+    padding: 14px 16px;                                   /* */
+    text-decoration: none;                                /* */
+    font-size: 16px;                                      /* */
+  }
+
+  .galleryRow {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .galleryColumn {
+    float: left;
+    display: grid;
+    width: 20vw;
+    height: 50vh;
+    margin: 2%;
+  }
+
+  .galleryColumn img {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .galleryContent {
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  .close {
+    display: none;
+  }
+
+
+  .progressBg {
+    text-align: left;
+    width: 50%;
+    background-color: black;
+  }
+
+  .htmlBar {
+    width: 75%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+  .cssBar {
+    width: 60%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+  .jsBar {
+    width: 40%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+  .javaBar {
+    width: 20%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+  .sqlBar {
+    width: 40%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+  .phpBar {
+    width: 45%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+  .jqueryBar {
+    width: 20%;
+    text-align: left;
+    color: yellow;
+    margin-bottom: 10px;
+    background-color: blue;
+  }
+
+
+}/* End desktop media query */
+
+
+
+
+
+@media only screen and (min-width: 700px) and (max-width: 1023px) {	/* Tablet screen sizes */
+  /* Used to import a custom font, used as a backup if the internal file font fails*/
+  @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+  /* Custom font used for the website, source:
+    https://fonts.google.com/specimen/Quicksand
+    Also uses the Georgia font as a fallback if the 2 custom fonts are to fail
+  */
+  @font-face {
+      font-family: quickSandLocal;
+      src: url('Res/Fonts/Quicksand-Regular.otf');
+  }
+
+
+  html {
+    font-family: 'quickSandLocal', 'Quicksand', Georgia;  /* Sets the font for the entire page*/
+    background-color: lightgrey;                          /* Sets the background colour behind the content */
+  }
+
+  body {
+    margin: 0;                                            /* Remove the margin */
+    overflow: hidden;                                     /* Hides all of the scrollbars in the body */
+  }
+
+  h1 {
+      text-decoration: underline;
+  }
+
+  header {
+    height: 60px;
+    background-color: orange;                               /* Adds a background colour to the naviagation bar */
+  }
+
+  .section {  /* Each 'section' of the website, e.g. Portfolio, Skills, Contact Me */
+    text-align: center;                                   /* Centers the text inside each section */
+    width: 100vw;                                          /* Sets the width to be 100% of the screen */
+    height: 100vw;                                        /* Sets the height to be 100% of the viewports width */
+    overflow-x: hidden;                                   /* Hides the scrollbars on the x-plane */
+    overflow-y: hidden;                                   /* Hides the scrollbars on the y-plane */
+    transform: rotate(90deg);                             /* Rotates the container by 90 degrees */
+  }
+
+  #main-container .section > div { /* mainly for the font inside the div */
+
+  }
+
+  #main-container { /* */
+    width: 100vw;                                          /* Sets the width to be 100% of the screen */
+    height: 100vw;                                        /* Sets the height to be 100% of the viewports width */
+    overflow-y: scroll;                                   /* Sets the y-plane scrollbar to be shown */
+    overflow-x: hidden;                                   /* Hides the scrollbar on the x-plane */
+    transform: rotate(-90deg);                            /* Rotates the container by -90 degrees */
+  }
+
+   /* Gives each section its own colour */
+  .one {
+    background-color: #45CCFF;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .two {
+    background-color: #49E83E;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .three {
+    background-color: #EDDE05;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .four {
+    background-color: #E84B30;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .five {
+    background-color: #E2631C;                            /* Temporary background colour to show each container differently */
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+  }
+
+  .sectionContents {
+    padding: 2%;
+  }
+
+  .aboutMe {
+    text-align: left;
+  }
+
+  .contactMe {
+   text-align: right;
+ }
+
+  #phoneMap {
+    display: none;
+  }
+
+  nav {
+    background-color: orange;                               /* Adds a background colour to the naviagation bar */
+    color: white;                                         /* Sets all of the font in the navigation bar to be white */
+    width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
+    height: 7vh;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+  }
+
+  a {
+    display: block;                                       /* Sets all of hyperlinks to be shown in a small block container */
+    color: white;                                         /* Sets the font of all hyperlinks to be white, contrasting the background colour */
+    text-align: center;                                   /* Centers all of the hyperlink text */
+    padding: 20px;                                        /* Adds 20px of padding to each hyperlink on all sides, used to make each link clearer */
+    text-decoration: none;                                /* Removes all text-decoration on eahc hyperlink ( such as underlines ) */
+    font-size: 20px;                                      /* Sets the font-size of each hyperlink to be 20px */
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  footer {
+    overflow: hidden;                                     /* Hides the scrollbar from the footer */
+    background-color: #333;                               /* Sets the background colour of the footer */
+    color: white;                                         /* Sets the font colour of all text in the hyperlink */
+    position: fixed;                                      /* Ensures that the footer is always at the bottom of the screen */
+    bottom: 0;                                            /* Sets the bottom edge of the container to be at the bottom of the screen */
+    width: 100%;                                          /* Sets the width of the footer to be 100% of the screens width */
+    height: 60px;                                          /* Sets the height of the footer to be 7% of the viewports height */
+  }
+
+
+  #nav-bar-links-table {
+    width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
+    text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
+  }
+
+  #nav-bar-links-table th {
+    border-left: 1px solid red;                           /* Adds a single red lined border to the left side of each table header */
+  }
+
+  #title-text {
+    padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
+    font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+  }
+
+  #title-text-phone {
+      display: none;
+  }
+
+  .cell-with-border {
+      border-left: 1px solid red;                         /* */
+  }
+
+
+  #centre-text-block {
+    margin: auto;                                         /* */
+    margin-top: 100px;                                    /* */
+    margin-bottom: 100px;                                 /* */
+    width: 100%;                                          /* */
+  }
+
+  #centre-text-block-contents {
+    text-align: center;                                   /* */
+    font-size: 20px;                                      /* */
+  }
+
+  #footer-contents {
+    display: block;                                       /* */
+    padding: 14px 16px;                                   /* */
+    text-decoration: none;                                /* */
+    font-size: 16px;                                      /* */
+  }
+
+  .galleryRow {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .galleryColumn {
+    float: left;
+    display: grid;
+    width: 20vw;
+    height: 50vh;
+    margin: 2%;
+  }
+
+  .galleryColumn img {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .galleryContent {
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  .class {
+    display: none;
+  }
+} /* End tablet media query */
+
+
+
+
+
+@media only screen and (max-width: 699px) { /* Phone screen sizes */
+  /* Used to import a custom font, used as a backup if the internal file font fails*/
+  @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+  /* Custom font used for the website, source:
+    https://fonts.google.com/specimen/Quicksand
+    Also uses the Georgia font as a fallback if the 2 custom fonts are to fail
+  */
+  @font-face {
+      font-family: quickSandLocal;
+      src: url('Res/Fonts/Quicksand-Regular.otf');
+  }
+
+  html {
+    font-family: 'quickSandLocal', 'Quicksand', Georgia;  /* Sets the font for the entire page*/
+    background-color: lightgrey;                          /* Sets the background colour behind the content */
+  }
+
+  body {
+    margin: 0;                                            /* Remove the margin */
+    overflow: hidden;                                     /* Hides all of the scrollbars in the body */
+  }
+
+  h1 {
+      text-decoration: underline;
+  }
+
+  header {
+    height: 7vh;
+  }
+
+  .section {  /* Each 'section' of the website, e.g. Portfolio, Skills, Contact Me */
+    text-align: center;                                   /* Centers the text inside each section */
+    width: 100vw;                                          /* Sets the width to be 100% of the screen */
+    height: 100vh;                                        /* Sets the height to be 100% of the viewports width */
+    overflow-x: hidden;                                   /* Hides the scrollbars on the x-plane */
+    overflow-y: hidden;                                   /* Hides the scrollbars on the y-plane */
+    margin-bottom: 1px;
+  }
+
+  #main-container .section > div { /* mainly for the font inside the div */
+
+  }
+
+  #main-container { /* */
+    width: 100vw;                                          /* Sets the width to be 100% of the screen */
+    height: 93vh;                                        /* Sets the height to be 100% of the viewports width */
+    overflow-y: scroll;                                   /* Sets the y-plane scrollbar to be shown */
+    overflow-x: scroll;                                   /* Hides the scrollbar on the x-plane */
+  }
+
+   /* Gives each section its own colour */
+  .one {
+    background-color: #45CCFF;                            /* Temporary background colour to show each container differently */
+    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .two {
+    background-color: #49E83E;                            /* Temporary background colour to show each container differently */
+    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+
+  }
+  .three {
+    background-color: #EDDE05;                            /* Temporary background colour to show each container differently */
+    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .four {
+    background-color: #E84B30;                            /* Temporary background colour to show each container differently */
+    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+  }
+  .five {
+    background-color: #E2631C;                            /* Temporary background colour to show each container differently */
+    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+  }
+
+  .sectionContents {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  #notPhoneMap {
+    display: none;
+  }
+
+  #title-text {
+    display: none;
+  }
+
+  #title-text-phone {
+      display: block;
+  }
+
+  nav {
+    background-color: green;                               /* Adds a background colour to the naviagation bar */
+    color: white;                                         /* Sets all of the font in the navigation bar to be white */
+    width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
+    height: 7vh;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+  }
+
+  a {
+    display: block;                                       /* Sets all of hyperlinks to be shown in a small block container */
+    color: white;                                         /* Sets the font of all hyperlinks to be white, contrasting the background colour */
+    text-align: center;                                   /* Centers all of the hyperlink text */
+    padding: 20px;                                        /* Adds 20px of padding to each hyperlink on all sides, used to make each link clearer */
+    text-decoration: none;                                /* Removes all text-decoration on eahc hyperlink ( such as underlines ) */
+    font-size: 20px;                                      /* Sets the font-size of each hyperlink to be 20px */
+  }
+
+  footer {
+    overflow: hidden;                                     /* Hides the scrollbar from the footer */
+    background-color: #333;                               /* Sets the background colour of the footer */
+    color: white;                                         /* Sets the font colour of all text in the hyperlink */
+    position: fixed;                                      /* Ensures that the footer is always at the bottom of the screen */
+    bottom: 0;                                            /* Sets the bottom edge of the container to be at the bottom of the screen */
+    width: 100%;                                          /* Sets the width of the footer to be 100% of the screens width */
+    height: 7vh;                                          /* Sets the height of the footer to be 7% of the viewports height */
+  }
+
+
+  #nav-bar-links-table {
+    width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
+    text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
+  }
+
+  #nav-bar-links-table th {
+    border-left: 1px solid red;                           /* Adds a single red lined border to the left side of each table header */
+  }
+
+  #title-text {
+    padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
+    font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+  }
+
+  .cell-with-border {
+      border-left: 1px solid red;                         /* */
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .non-phone-table {
+    display: none;
+  }
+
+  #centre-text-block {
+    margin: auto;                                         /* */
+    margin-top: 100px;                                    /* */
+    margin-bottom: 100px;                                 /* */
+    width: 100%;                                          /* */
+  }
+
+  #centre-text-block-contents {
+    text-align: center;                                   /* */
+    font-size: 20px;                                      /* */
+  }
+
+  #footer-contents {
+    display: block;                                       /* */
+    padding: 14px 16px;                                   /* */
+    text-decoration: none;                                /* */
+    font-size: 16px;                                      /* */
+  }
+
+  .galleryRow {
+    width: 90vw;
+    height: 50vh;
+  }
+
+  .galleryColumn {
+    width: 90vw;
+    margin: 2%;
+  }
+
+  .galleryColumn img {
+    display: none;
+  }
+
+  .galleryContent {
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  /* The Modal */
+  .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 25vh; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100vw; /* Full width */
+      height: 100vh; /* Full height */
+      overflow: hidden; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+
+  /* Modal image */
+  .modal-content {
+      margin: auto;
+      display: block;
+  }
+
+  /* Modal image caption */
+  #caption {
+      margin: auto;
+      display: block;
+      text-align: center;
+      color: white;
+  }
+
+  /* Modal close button*/
+  .close {
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      color: white;
+      font-size: 40px;
+  }
+} /* End phone media query */

@@ -1,0 +1,210 @@
+<!--
+  CM1101
+  Computer Information Systems
+  Liam Clifford
+  1713749
+  Online Portfolio Project
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Portfolio, Horizontal, Scroll, Personal">
+    <title>Testing horizontal scrolling</title>
+    <link rel="stylesheet" type="text/css" href="Res/Styles/Portfolio.css">
+    <script src="Res/JS/portfolioJS.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <header>
+        <nav>
+          <table id="nav-bar-links-table">
+            <tbody>
+              <tr>
+                <td width="50%">
+                  <p id="title-text" onclick="clickScroll(0)" class="non-phone-table">Liam Clifford</p>
+                  <p id="title-text-phone" onclick="clickScrollPhone(0)">LC</p>
+                </td>
+                <td class="cell-with-border">
+                  <a href="#Projects" onclick="clickScroll(1)" class="non-phone-table">Projects</a>
+                  <a href="#Projects" onclick="clickScrollPhone(1)" class="phone-table">Projects</a>
+                </td>
+                <td class="cell-with-border">
+                  <a href="#Experience" onclick="clickScroll(2)" class="non-phone-table">Experience</a>
+                  <a href="#Experience" onclick="clickScrollPhone(2)" class="phone-table">Experience</a>
+                </td>
+                <td class="cell-with-border">
+                  <a href="#Qualifications" onclick="clickScroll(3)" class="non-phone-table">Qualifications</a>
+                  <a href="#Qualifications" onclick="clickScrollPhone(3)" class="phone-table">Qualifications</a>
+                </td>
+                <td class="cell-with-border">
+                  <a href="#Contact" onclick="clickScroll(4)" class="non-phone-table">Contact</a>
+                  <a href="#Contact" onclick="clickScrollPhone(4)" class="phone-table">Contact</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </nav>
+    </header>
+
+
+    <div id="main-container">
+      <div id="sections-container">
+
+        <div class="section one"><!-- About Me -->
+          <div class="sectionContents aboutMe">
+            <div id="aboutMe">
+              <h1>About Me</h1>
+              <p><h2>Hello.</h2>I'm Liam Clifford, a Scottish computing student. I am hard working, eager and willing to learn and constantly update my skills and gain new opportunities.</p>
+              <p>I am currently attending Robert Gordon's University in Aberdeen, Scotland on my BSc (Hons) Cyber Security degree.</p>
+              <iframe id="notPhoneMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2166.0901800888273!2d-2.142813817081789!3d57.11842190567399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488410483d2f0941%3A0x5d8969688e77366a!2sRobert+Gordon+University!5e0!3m2!1sen!2suk!4v1511870745809" width="600" height="300" frameborder="0s" style="border: 1px solid black;" allowfullscreen></iframe><!-- Google Map - embded content -->
+              <iframe id="phoneMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2166.0901800888273!2d-2.142813817081789!3d57.11842190567399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488410483d2f0941%3A0x5d8969688e77366a!2sRobert+Gordon+University!5e0!3m2!1sen!2suk!4v1511870745809" width="400" height="200" frameborder="0s" style="border: 1px solid black;" allowfullscreen></iframe><!-- Google Map - embded content -->
+            </div><!-- End aboutMe -->
+          </div><!-- End sectionContents aboutMe -->
+        </div><!-- End section one -->
+
+        <div class="section two"><!-- Portfolio -->
+          <div class="sectionContents portfolio">
+            <div id="portfolio">
+              <h1>Projects</h1>
+              <div id="imageGallery">
+                <div class="galleryRow">
+
+                  <div class="galleryColumn">
+                    <div class="galleryContent">
+                      <img src="Res\Images\Portfoli_CouncilAppMobile.PNG" alt="Council website">
+                      <h3>Council website - <p onclick="displayImg1()" style="display: inline;">View image</p></h3>
+                      <p>A responsive JQuery based website, designed for all devices to display information for the local council.</p>
+                    </div><!-- End galleryContent -->
+                  </div><!-- End galleryColumn -->
+
+                  <div class="galleryColumn">
+                    <div class="galleryContent">
+                      <img src="Res\Images\Portfoli_JonJo.PNG" alt="Custom pizza app">
+                      <h3>Pizza Delivery App - <p onclick="displayImg2()" style="display: inline;">View image</p></h3>
+                      <p>A custom pizza delivery app, responsive, PHP & JS based. Users purchase pre-set pizzas or create their own.</p>
+                    </div><!-- End galleryContent -->
+                  </div><!-- End galleryColumn -->
+
+                  <div class="galleryColumn">
+                    <div class="galleryContent">
+                      <img src="Res\Images\Portfoli_Sokoban.PNG" alt="Sokoban - Java game">
+                      <h3>Sokoban - Java - <p onclick="displayImg3()" style="display: inline;">View image</p></h3>
+                      <p>A pirate themed take on the classic Sokoban game made using Java. Users control a ship to move an object to its goal.</p>
+                    </div><!-- End galleryContent -->
+                  </div><!-- End galleryColumn -->
+
+                  <div class="galleryColumn">
+                    <div class="galleryContent">
+                      <img src="Res\Images\Portfoli_Stellar_Game.PNG" alt="Educational game - Stellar Speller">
+                      <h3>Stellar Speller - <p onclick="displayImg4()" style="display: inline;">View image</p></h3>
+                      <p>School game, JS and PHP based. Control a small ship and shoot incoming letters to spell a word. Pupil/Teacher systems to track progress.</p>
+                    </div><!-- End galleryContent -->
+                  </div><!-- End galleryColumn -->
+
+                  <!-- The Modal -->
+                  <div id="imgModal" class="modal">
+                    <span class="close" onclick="closeModal()">Close</span>
+                    <img class="modal-content" id="imageArea">
+                    <div id="caption"></div>
+                  </div><!-- End imgModal -->
+
+                </div><!-- End galleryRow -->
+              </div><!--End imageGallery -->
+          </div><!-- End portfolio -->
+        </div><!-- End sectionContents portfolio -->
+      </div><!-- End sections two -->
+
+        <div class="section three"><!-- Experience -->
+          <div class="sectionContents exp">
+            <div id="exp">
+              <h1>Experience</h1>
+              <h4>2013-2014 - ReBOOT</h4>
+              <p>Computing recycling company. Computer creation, testing and delivery to Scottish schools.</p>
+
+              <h4>2013-2014 - ILM</h4>
+              <p>Local electronic recycling centre. Dismantling computers and laptops, and the collection of computer systems all around Scotland.</p>
+
+              <h4>2014 - 2017 - UHI</h4>
+              <p>I attended the Univerity of The Highlands and Islands in Inverness to study Computing - ended with a HNC.</p>
+
+              <h4>2017 - Ongoing - RGU</h4>
+              <p>I am currently attending Robert Gordon's University in Aberdeen to complete my BSc (Hons) Cyber Security degree. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section four"><!-- Skills -->
+          <div class="sectionContents skills">
+            <div id="skills">
+              <h1>Qualifications</h1>
+              <p>I am always attempting to improve my skills to ensure I am always keeping up with modern technologies and allowing myself to make the best content i can.</p>
+              <div class="progressBg">
+                <div class="skillBar" class="htmlBar">
+                  <p>HTML</p>
+                </div><!-- End html -->
+              </div><!-- End progressBg -->
+
+              <div class="progressBg">
+                <div class="cssBar">
+                  <p>CSS</p>
+                </div><!-- End cssBar -->
+              </div><!-- End progressBg -->
+
+              <div class="progressBg">
+                <div class="jsBar">
+                  <p>JavaScript</p>
+                </div><!-- End jsBar -->
+              </div><!-- End progressBg -->
+
+              <div class="progressBg">
+                <div class="javaBar">
+                  <p>Java</p>
+                </div><!-- End javaBar -->
+              </div><!-- End progressBg -->
+
+                <div class="progressBg">
+                <div class="sqlBar">
+                  <p>SQL</p>
+                </div><!-- End sqlBar -->
+              </div><!-- End progressBg -->
+
+              <div class="progressBg">
+                <div class="phpBar">
+                  <p>php</p>
+                </div><!-- End phpBar -->
+              </div><!-- End progressBg -->
+
+              <div class="progressBg">
+                <div class="jQueryBar">
+                  <p>JQuery</p>
+                </div><!-- End jQueryBar -->
+              </div><!-- End progressBg -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="section five"><!-- Contact Me -->
+          <div class="sectionContents contactMe">
+            <div id="contactMe">
+              <h1>Contact Me</h1>
+              <p>Spicy jalapeno bacon ipsum dolor amet in drumstick sunt enim qui dolore. Dolor shankle in sed salami cillum. Pancetta esse ut sunt ham hock, corned beef cupim swine beef ribs beef venison strip steak eiusmod deserunt. Tail alcatra irure esse. Ground round sirloin eu beef porchetta enim pork loin. Tenderloin boudin exercitation dolore magna corned beef alcatra culpa do ribeye.
+
+              Excepteur frankfurter ribeye kevin ex. Officia drumstick commodo spare ribs eiusmod, doner cow chicken aliquip aliqua pork belly quis. Ball tip jerky meatball, pariatur venison aliqua landjaeger ham eu ex strip steak sirloin. Sausage jerky frankfurter reprehenderit meatball pancetta.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+        <div id="footer-contents">
+          <p style="float: left;">© Liam Clifford, <span id="dateGoesHere"></span></p>
+          <p style="float: right;">Last Updated - 05/10/17</p>
+        </div>
+    </footer>
+  </body>
+</html>
