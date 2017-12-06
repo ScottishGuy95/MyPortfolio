@@ -16,14 +16,13 @@
     Also uses the Georgia font as a fallback if the 2 custom fonts are to fail
   */
   @font-face {
-      font-family: quickSandLocal;
-      src: url('Res/Fonts/Quicksand-Regular.otf');
+      font-family: quickSandLocal !important;
+      src: url('../Fonts/Quicksand-Regular.otf')  !important;
   }
 
-
   html {
-    font-family: 'quickSandLocal', 'Quicksand', Georgia;  /* Sets the font for the entire page*/
-    background-color: lightgrey;                          /* Sets the background colour behind the content */
+    font-family: 'quickSandLocal', 'Quicksand', Georgia  !important;  /* Sets the font for the entire page*/
+    background-color: whitesmoke;                          /* Sets the background colour behind the content */
   }
 
   body {
@@ -31,12 +30,8 @@
     overflow: hidden;                                     /* Hides all of the scrollbars in the body */
   }
 
-  h1 {
-      text-decoration: underline;
-  }
-
   header {
-    height: 60px;
+    height: 77px;
   }
 
   .section {  /* Each 'section' of the website, e.g. Portfolio, Skills, Contact Me */
@@ -48,11 +43,8 @@
     transform: rotate(90deg);                             /* Rotates the container by 90 degrees */
   }
 
-  #main-container .section > div { /* mainly for the font inside the div */
-
-  }
-
   #main-container { /* */
+    background-image: url('../Images/geoBg.jpg');
     width: 100vw;                                          /* Sets the width to be 100% of the screen */
     height: 100vw;                                        /* Sets the height to be 100% of the viewports width */
     overflow-y: scroll;                                   /* Sets the y-plane scrollbar to be shown */
@@ -60,54 +52,53 @@
     transform: rotate(-90deg);                            /* Rotates the container by -90 degrees */
   }
 
-   /* Gives each section its own colour */
-  .one {
-    background-color: #45CCFF;                            /* Temporary background colour to show each container differently */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
-  }
-  .two {
-    background-color: #49E83E;                            /* Temporary background colour to show each container differently */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
-  }
-  .three {
-    background-color: #EDDE05;                            /* Temporary background colour to show each container differently */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
-  }
-  .four {
-    background-color: #E84B30;                            /* Temporary background colour to show each container differently */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
-  }
-  .five {
-    background-color: #E2631C;                            /* Temporary background colour to show each container differently */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
-  }
+  /* Gives each section its own colour */
+ .one {
+   border-right: 1px solid #DE1B1B;
+   width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+   height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+ }
+ .two {
+   border-right: 1px solid #DE1B1B;
+   width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+   height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+ }
+ .three {
+   border-right: 1px solid #DE1B1B;
+   width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+   height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+ }
+ .four {
+   border-right: 1px solid #DE1B1B;
+   width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+   height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+ }
+ .five {
+   border-right: 1px solid #DE1B1B;
+   width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+   height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+ }
 
   .sectionContents {
     padding: 2%;
+    font-weight: bold !important;
+    font-size: 18px;
   }
 
   .aboutMe {
     text-align: left;
+    font-size: 18px;
   }
-
-  .contactMe {
-   text-align: right;
- }
 
   #phoneMap {
     display: none;
   }
 
   nav {
-    background-color: #333;                               /* Adds a background colour to the naviagation bar */
+    background-color: #2B2B2B;                               /* Adds a background colour to the naviagation bar */
     color: white;                                         /* Sets all of the font in the navigation bar to be white */
     width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
-    height: 7vw;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+    height: 77px;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
   }
 
   a {
@@ -121,22 +112,19 @@
 
   footer {
     overflow: hidden;                                     /* Hides the scrollbar from the footer */
-    background-color: #333;                               /* Sets the background colour of the footer */
+    background-color: #2B2B2B;                               /* Sets the background colour of the footer */
     color: white;                                         /* Sets the font colour of all text in the hyperlink */
     position: fixed;                                      /* Ensures that the footer is always at the bottom of the screen */
     bottom: 0;                                            /* Sets the bottom edge of the container to be at the bottom of the screen */
     width: 100%;                                          /* Sets the width of the footer to be 100% of the screens width */
     height: 60px;                                          /* Sets the height of the footer to be 7% of the viewports height */
+    border-top: 1px solid #DE1B1B;
   }
 
 
   #nav-bar-links-table {
     width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
     text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
-  }
-
-  #nav-bar-links-table th {
-    border-left: 1px solid red;                           /* Adds a single red lined border to the left side of each table header */
   }
 
   #title-text {
@@ -150,7 +138,7 @@
   }
 
   .cell-with-border {
-      border-left: 1px solid red;                         /* */
+      border-left: 1px solid #DE1B1B;                         /* */
   }
 
 
@@ -172,6 +160,11 @@
     text-decoration: none;                                /* */
     font-size: 16px;                                      /* */
   }
+
+  #mobile_modal_text {
+    display: none;
+  }
+
 
   .galleryRow {
     width: 100vw;
@@ -203,68 +196,69 @@
   }
 
 
-  .progressBg {
-    text-align: left;
-    width: 50%;
-    background-color: black;
+  #email-form {
+    border: 1px solid black;
+    background-color: #2B2B2B;
+    margin: auto;
+    width: 50vw;
+    opacity: 0.9;
   }
 
-  .htmlBar {
-    width: 75%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+  #email-form label {
+    color: white;
+    padding-right: 10px;
   }
 
-  .cssBar {
+  .email-form-container {
     width: 60%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+    background-color: #2B2B2B;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid #DE1B1B;
+  }
+  .email-form-container p, .email-form-container h2 {
+    color: whitesmoke;
   }
 
-  .jsBar {
-    width: 40%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+  .email-form-container h2 {
+    padding-top: 10px;
   }
 
-  .javaBar {
-    width: 20%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+  .email-form-form {
+    padding-top: 20px;
+    text-align: center;
   }
 
-  .sqlBar {
-    width: 40%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+  .email-form-form input, label, textarea {
+    width: 80%;
+    background-color: #dedede;
+    border-radius: 5px;
+    color: black;
   }
 
-  .phpBar {
-    width: 45%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+  #client-msg textarea {
+    height: 20%;
   }
 
-  .jqueryBar {
-    width: 20%;
-    text-align: left;
-    color: yellow;
-    margin-bottom: 10px;
-    background-color: blue;
+  .email-form-form input:focus, label:focus, textarea:focus{
+    outline: 3px solid #DE1B1B;
   }
 
+  #social-container {
+    width: 50%;
+    margin: auto;
+  }
+
+  #social-container img {
+    width: 10%;
+    height: 10%;
+  }
+
+  #social-container a {
+    display: inline;
+    padding: 0;
+  }
 
 }/* End desktop media query */
 
@@ -296,13 +290,8 @@
     overflow: hidden;                                     /* Hides all of the scrollbars in the body */
   }
 
-  h1 {
-      text-decoration: underline;
-  }
-
   header {
-    height: 60px;
-    background-color: orange;                               /* Adds a background colour to the naviagation bar */
+    height: 77px;
   }
 
   .section {  /* Each 'section' of the website, e.g. Portfolio, Skills, Contact Me */
@@ -314,11 +303,8 @@
     transform: rotate(90deg);                             /* Rotates the container by 90 degrees */
   }
 
-  #main-container .section > div { /* mainly for the font inside the div */
-
-  }
-
   #main-container { /* */
+    background-image: url('../Images/geoBg.jpg');
     width: 100vw;                                          /* Sets the width to be 100% of the screen */
     height: 100vw;                                        /* Sets the height to be 100% of the viewports width */
     overflow-y: scroll;                                   /* Sets the y-plane scrollbar to be shown */
@@ -328,52 +314,51 @@
 
    /* Gives each section its own colour */
   .one {
-    background-color: #45CCFF;                            /* Temporary background colour to show each container differently */
+    border-right: 1px solid #DE1B1B;
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .two {
-    background-color: #49E83E;                            /* Temporary background colour to show each container differently */
+    border-right: 1px solid #DE1B1B;
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .three {
-    background-color: #EDDE05;                            /* Temporary background colour to show each container differently */
+    border-right: 1px solid #DE1B1B;
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .four {
-    background-color: #E84B30;                            /* Temporary background colour to show each container differently */
+    border-right: 1px solid #DE1B1B;
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .five {
-    background-color: #E2631C;                            /* Temporary background colour to show each container differently */
+    border-right: 1px solid #DE1B1B;
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vw;                                        /* Sets the width to be 100% of viewports width */
   }
 
   .sectionContents {
     padding: 2%;
+    font-weight: bold !important;
+    font-size: 18px;
   }
 
   .aboutMe {
     text-align: left;
+    font-size: 18px;
   }
-
-  .contactMe {
-   text-align: right;
- }
 
   #phoneMap {
     display: none;
   }
 
   nav {
-    background-color: orange;                               /* Adds a background colour to the naviagation bar */
+    background-color: #2B2B2B;                               /* Adds a background colour to the naviagation bar */
     color: white;                                         /* Sets all of the font in the navigation bar to be white */
     width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
-    height: 7vh;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+    height: 77px;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
   }
 
   a {
@@ -391,12 +376,13 @@
 
   footer {
     overflow: hidden;                                     /* Hides the scrollbar from the footer */
-    background-color: #333;                               /* Sets the background colour of the footer */
+    background-color: #2B2B2B;                               /* Sets the background colour of the footer */
     color: white;                                         /* Sets the font colour of all text in the hyperlink */
     position: fixed;                                      /* Ensures that the footer is always at the bottom of the screen */
     bottom: 0;                                            /* Sets the bottom edge of the container to be at the bottom of the screen */
     width: 100%;                                          /* Sets the width of the footer to be 100% of the screens width */
     height: 60px;                                          /* Sets the height of the footer to be 7% of the viewports height */
+    border-top: 1px solid #DE1B1B;
   }
 
 
@@ -412,16 +398,24 @@
   #title-text {
     padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
     font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+
   }
 
   #title-text-phone {
       display: none;
   }
 
+  #mobile_modal_text {
+    display: none;
+  }
+
+  .close {
+    display: none;
+  }
+
   .cell-with-border {
       border-left: 1px solid red;                         /* */
   }
-
 
   #centre-text-block {
     margin: auto;                                         /* */
@@ -467,9 +461,79 @@
     border: 1px solid black;
   }
 
+  #mobile_modal_text {
+    display: none;
+  }
+
   .class {
     display: none;
   }
+
+  #email-form {
+    border: 1px solid black;
+    background-color: #2B2B2B;
+    margin: auto;
+    width: 50vw;
+    opacity: 0.9;
+  }
+
+  #email-form label {
+    color: white;
+    padding-right: 10px;
+  }
+
+  .email-form-container {
+    width: 60%;
+    background-color: #2B2B2B;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid #DE1B1B;
+  }
+
+  .email-form-container p, .email-form-container h2 {
+    color: whitesmoke;
+  }
+
+  .email-form-container h2 {
+    padding-top: 10px;
+  }
+
+  .email-form-form {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .email-form-form input, label, textarea {
+    width: 80%;
+    background-color: #dedede;
+    border-radius: 5px;
+    color: black;
+  }
+
+  #client-msg textarea {
+    height: 20%;
+  }
+
+  .email-form-form input:focus, label:focus, textarea:focus{
+    outline: 3px solid #DE1B1B;
+  }
+
+  #social-container {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  #social-container img {
+    width: 10%;
+    height: 10%;
+  }
+
+  #social-container a {
+    display: inline;
+    padding: 0;
+  }
+
 } /* End tablet media query */
 
 
@@ -491,7 +555,7 @@
 
   html {
     font-family: 'quickSandLocal', 'Quicksand', Georgia;  /* Sets the font for the entire page*/
-    background-color: lightgrey;                          /* Sets the background colour behind the content */
+    background-color: whitesmoke;                          /* Sets the background colour behind the content */
   }
 
   body {
@@ -499,12 +563,8 @@
     overflow: hidden;                                     /* Hides all of the scrollbars in the body */
   }
 
-  h1 {
-      text-decoration: underline;
-  }
-
   header {
-    height: 7vh;
+    height: 50px;
   }
 
   .section {  /* Each 'section' of the website, e.g. Portfolio, Skills, Contact Me */
@@ -516,11 +576,8 @@
     margin-bottom: 1px;
   }
 
-  #main-container .section > div { /* mainly for the font inside the div */
-
-  }
-
   #main-container { /* */
+    background-image: url('../Images/geoBg.jpg');
     width: 100vw;                                          /* Sets the width to be 100% of the screen */
     height: 93vh;                                        /* Sets the height to be 100% of the viewports width */
     overflow-y: scroll;                                   /* Sets the y-plane scrollbar to be shown */
@@ -529,29 +586,29 @@
 
    /* Gives each section its own colour */
   .one {
-    background-color: #45CCFF;                            /* Temporary background colour to show each container differently */
-    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    border-bottom: 1px solid #DE1B1B;
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vh;                                        /* Sets the width to be 100% of viewports width */
   }
   .two {
-    background-color: #49E83E;                            /* Temporary background colour to show each container differently */
-    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    border-bottom: 1px solid #DE1B1B;
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vh;                                        /* Sets the width to be 100% of viewports width */
 
   }
   .three {
-    background-color: #EDDE05;                            /* Temporary background colour to show each container differently */
-    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    border-bottom: 1px solid #DE1B1B;
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vh;                                        /* Sets the width to be 100% of viewports width */
   }
   .four {
-    background-color: #E84B30;                            /* Temporary background colour to show each container differently */
-    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    border-bottom: 1px solid #DE1B1B;
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vh;                                        /* Sets the width to be 100% of viewports width */
   }
   .five {
-    background-color: #E2631C;                            /* Temporary background colour to show each container differently */
-    width: calc(100vw - 17px);                                         /* Sets the width to be 100% of viewports width */
+    border-bottom: 1px solid #DE1B1B;
+    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vh;                                        /* Sets the width to be 100% of viewports width */
   }
 
@@ -570,14 +627,15 @@
   }
 
   #title-text-phone {
+      padding-left: 5px;
       display: block;
   }
 
   nav {
-    background-color: green;                               /* Adds a background colour to the naviagation bar */
+    background-color: #2B2B2B;                               /* Adds a background colour to the naviagation bar */
     color: white;                                         /* Sets all of the font in the navigation bar to be white */
     width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
-    height: 7vh;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+    height: 50px;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
   }
 
   a {
@@ -666,6 +724,10 @@
     border: 1px solid black;
   }
 
+  #mobile_modal_text {
+    display: inline;
+  }
+
   /* The Modal */
   .modal {
       display: none; /* Hidden by default */
@@ -701,5 +763,68 @@
       right: 15px;
       color: white;
       font-size: 40px;
+  }
+
+  #email-form {
+    border: 1px solid black;
+    background-color: #2B2B2B;
+    margin: auto;
+    width: 50vw;
+    opacity: 0.9;
+  }
+
+  #email-form label {
+    color: white;
+    padding-right: 10px;
+  }
+
+  .email-form-container {
+    width: 60%;
+    height: 50vh;
+    background-color: #2B2B2B;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid #DE1B1B;
+  }
+  .email-form-container p, .email-form-container h2 {
+    color: whitesmoke;
+  }
+
+  .email-form-container h2 {
+    padding-top: 10px;
+  }
+
+  .email-form-form {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .email-form-form input, label, textarea {
+    width: 80%;
+    background-color: #dedede;
+    border-radius: 5px;
+    color: black;
+  }
+
+  #client-msg textarea {
+    height: 20%;
+  }
+
+  .email-form-form input:focus, label:focus, textarea:focus{
+    outline: 3px solid #DE1B1B;
+  }
+
+  #social-container {
+    margin: auto;
+  }
+
+  #social-container img {
+    width: 10%;
+  }
+
+  #social-container a {
+    display: inline;
+    padding: 0;
   }
 } /* End phone media query */

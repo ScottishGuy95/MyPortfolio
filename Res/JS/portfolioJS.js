@@ -2,7 +2,7 @@ function clickScroll( moveValue ) {
   var screenW = window.innerWidth;
   var distance = screenW * moveValue;
   var divToMove = document.getElementById("main-container");
-  divToMove.scrollTo(0,0);
+  divToMove.scrollBy(0,0);
   divToMove.scrollBy(0, distance);
 }
 
