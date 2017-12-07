@@ -921,22 +921,22 @@
 @media only screen and (max-width: 510px) { /* Smaller phone screen sizes */
 
   #title-text-phone {     /* Sets the CSS for the title text, showing my name */
-    display: none;
+    display: none;                                   /* Hides the element */
   }
 
   #nav-links-phone {    /* The navigation bar list CSS */
-    font-size: 14px;
+    font-size: 14px;                                 /* Sets the font size to fit better in the navigation table */
   }
 
-  .aboutMe h2 {
-    display: none;
+  .aboutMe h2 {   /* The about me section of the website */
+    display: none;                                   /* Hides the elements */
   }
 
-  .aboutMe {
-    padding-left: 10px;
+  .aboutMe {    /* The about me section of the website */
+    padding-left: 10px;                              /* Adds a small padding to the left side of the container */
   }
 
-  #phoneMap {
-    display: none;
+  #phoneMap {     /* Sets the CSS for the map container holding the embeded map */
+    display: none;                                   /* Hides the element */
   }
-}
+}/* End smaller phone media query */
