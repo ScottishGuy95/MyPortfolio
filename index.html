@@ -12,11 +12,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Portfolio, Horizontal, Scroll, Personal">
+    <meta name="description" content="A online portfolio of all of my work">
     <title>Liam Clifford - Portfolio</title>
+
     <!-- Include bootstrap -->
     <link rel="stylesheet" type="text/css" href="Res/Styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="Res/Styles/bootstrap.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -29,32 +30,30 @@
   <body>
     <header>
         <nav>
-          <table id="nav-bar-links-table">
-            <tbody>
-              <tr>
-                <td width="50%">
-                  <p id="title-text" onclick="clickScroll(0)" class="non-phone-table">Liam Clifford</p>
-                  <p id="title-text-phone" onclick="clickScrollPhone(0)">LC</p>
-                </td>
-                <td class="cell-with-border">
-                  <a href="#Projects" onclick="clickScroll(1)" class="non-phone-table">Projects</a>
-                  <a href="#Projects" onclick="clickScrollPhone(1)" class="phone-table">Projects</a>
-                </td>
-                <td class="cell-with-border">
-                  <a href="#Experience" onclick="clickScroll(2)" class="non-phone-table">Experience</a>
-                  <a href="#Experience" onclick="clickScrollPhone(2)" class="phone-table">Experience</a>
-                </td>
-                <td class="cell-with-border">
-                  <a href="#Qualifications" onclick="clickScroll(3)" class="non-phone-table">Qualifications</a>
-                  <a href="#Qualifications" onclick="clickScrollPhone(3)" class="phone-table">Qualifications</a>
-                </td>
-                <td class="cell-with-border">
-                  <a href="#Contact" onclick="clickScroll(4)" class="non-phone-table">Contact</a>
-                  <a href="#Contact" onclick="clickScrollPhone(4)" class="phone-table">Contact</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+          <ul class="nav-bar-list" style="margin: 0; padding: 0;">
+            <li>
+              <a href="#" id="title-text" onclick="clickScroll(0)" >Liam Clifford</a>
+              <a href="#" id="title-text-phone" onclick="clickScrollPhone(0)">LC</a>
+            </li>
+            <li>
+              <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(4)">Contact</a>
+              <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(4)">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(3)">Qualifications</a>
+              <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(3)">Qualifications</a>
+            </li>
+            <li>
+              <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(2)">Experience</a>
+              <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(2)">Experience</a>
+            </li>
+            <li>
+              <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(1)">Projects</a>
+              <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(1)">Projects</a>
+            </li>
+          </ul>
+
         </nav>
     </header>
 
@@ -126,7 +125,6 @@
                     </div><!-- End galleryContent -->
                   </div><!-- End galleryColumn -->
 
-                  <!-- The Modal -->
                   <div id="imgModal" class="modal">
                     <span class="close" onclick="closeModal()">Close</span>
                     <img class="modal-content" id="imageArea">
@@ -135,9 +133,9 @@
 
                 </div><!-- End galleryRow -->
               </div><!--End imageGallery -->
-          </div><!-- End portfolio -->
-        </div><!-- End sectionContents portfolio -->
-      </div><!-- End sections two -->
+            </div><!-- End portfolio -->
+          </div><!-- End sectionContents portfolio -->
+        </div><!-- End sections two -->
 
         <div class="section three"><!-- Experience -->
           <div class="sectionContents exp">
@@ -218,7 +216,7 @@
 
               <div class="email-form-container">
                 <h2>Let's get in touch!</h2>
-                <p>Just pop in your detail's and I will get back in touch</p>
+                <p>Just pop in your message and I will get back in touch</p>
                 <form class="email-form-form" action="mailto:1713749@rgu.ac.uk?subject=" method="POST" enctype="text/plain">
                   <p id="client-msg">
                     <textarea id="clientmsg" name="client-msg" type="text" placeholder="Enter your message here"></textarea>
@@ -231,7 +229,7 @@
                 <p>Or contact me through one of these!</p>
                 <div id="social-container">
                   <a href="https://en-gb.facebook.com/robertgordonuniversity/"><img src="Res/Images/Icons/Facebook.png" alt="Facebook icon"></a>
-                  <a href="https://github.com/ScottishGuy95/"><img src="Res/Images/Icons/Github.png" alt="Github icon"></a>
+                  <a href="https://github.com/ScottishGuy95/"><img src="Res/Images/Icons/Github.png" alt="GitHub icon"></a>
                   <a href="https://plus.google.com/+robertgordonuniversity"><img src="Res/Images/Icons/Google+.png" alt="Google+ icon"></a>
                   <a href="https://www.pinterest.co.uk/robertgordonuni/"><img src="Res/Images/Icons/Pinterest.png" alt="Pinterest icon"></a>
                   <a href="https://www.tumblr.com/"><img src="Res/Images/Icons/Tumblr.png" alt="Tumblr icon"></a>
@@ -250,9 +248,10 @@
 
     <footer>
         <div id="footer-contents">
-          <p style="float: left;">© Liam Clifford, <span id="dateGoesHere"></span></p>
-          <p style="float: right;">Last Updated - 05/10/17</p>
+          <p style="float: left;">© Liam Clifford</p>
+          <p style="float: right;">Last Updated - 06/12/17</p>
         </div><!-- End footer-contents -->
     </footer>
+
   </body>
 </html>

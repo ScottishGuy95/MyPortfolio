@@ -1,9 +1,9 @@
 /*
-CM1101
-Computer Information Systems
-Liam Clifford
-1713749
-Online Portfolio Project
+  CM1101
+  Computer Information Systems
+  Liam Clifford
+  1713749
+  Online Portfolio Project
 */
 
 
@@ -17,10 +17,11 @@ Online Portfolio Project
   */
   @font-face {
     font-family: quickSandLocal !important;
-    src: url('../Fonts/Quicksand-Regular.otf')  !important;
+    src: url('../Fonts/Quicksand-Regular.otf');
   }
 
   html {
+    margin: 0;
     font-family: 'quickSandLocal', 'Quicksand', Georgia  !important;  /* Sets the font for the entire page*/
     background-color: whitesmoke;                          /* Sets the background colour behind the content */
   }
@@ -31,7 +32,7 @@ Online Portfolio Project
   }
 
   header {
-    height: 77px;                                         /* Set the height of the header to include the scrollbar(17px) */
+    height: 70px;                                         /* Set the height of the header to include the scrollbar(17px) */
   }
 
   #main-container {   /* The container holding all of the sections */
@@ -117,7 +118,7 @@ Online Portfolio Project
     background-color: #2B2B2B;                            /* Adds a background colour to the naviagation bar */
     color: white;                                         /* Sets all of the font in the navigation bar to be white */
     width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
-    height: 77px;                                         /* Sets the height to include the scrollbar(17px) */
+    height: 70px;                                         /* Sets the height to include the scrollbar(17px) */
   }
 
   a {    /* Sets the CSS for the a links */
@@ -127,6 +128,7 @@ Online Portfolio Project
     padding: 20px;                                        /* Adds 20px of padding to each hyperlink on all sides, used to make each link clearer */
     text-decoration: none;                                /* Removes all text-decoration on eahc hyperlink ( such as underlines ) */
     font-size: 20px;                                      /* Sets the font-size of each hyperlink to be 20px */
+    float: left;
   }
 
   footer {    /* Sets the CSS forthe footer */
@@ -140,23 +142,40 @@ Online Portfolio Project
     border-top: 1px solid #DE1B1B;                        /* Gives the footer a small top border */
   }
 
-  #nav-bar-links-table {  /* Sets the CSS for the navigation bar table */
-    width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
-    text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
+  .nav-bar-list ul {    /* The navigation bar list CSS */
+    list-style-type: none;                                 /* Remove the list decoration */
+    margin: 0px !important;                                /* Removes any margins */
+    padding: 0px !important;                               /* Removes any padding */
+  }
+
+  .nav-bar-list li {    /* The navigation bar list CSS */
+    display: inline;                                        /* All elements displayed on the same link */
+    width: 15vw;                                            /* Each list elements width is 15% of the viewports width */
+    text-align: left;                                       /* Aligns all text to the left */
+  }
+
+  .nav-links {    /* The navigation bar list CSS */
+    border-left: 1px solid #DE1B1B;                       /* Gives each cell of the table a small left border */
+    float: right;                                         /* Floats all elements to the right */
   }
 
   #title-text {     /* Sets the CSS for the title text, showing my name */
     padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
     font-size: 24px;                                      /* Sets the font of the title text to be 24px */
     cursor: pointer;                                      /* Lets the mouse show a pointer when hovering over the element */
+    float: left;
+  }
+
+  #nav-links-phone {    /* The navigation bar list CSS */
+    display: none;                                        /* Hides the elements */
+  }
+
+  #title-text-phone {     /* Sets the CSS for the title text, showing my name */
+    display: none;                                        /* Hides the elements */
   }
 
   .phone-table, #title-text-phone {     /* The navigation bar for mobile screens */
     display: none;                                        /* Sets the element ot be hidden */
-  }
-
-  .cell-with-border {        /* Each individual cell of the table */
-    border-left: 1px solid #DE1B1B;                       /* Gives each cell of the table a small left border */
   }
 
   #centre-text-block {  /* Sets the CSS for the main content block */
@@ -241,6 +260,10 @@ Online Portfolio Project
     padding-top: 10px;                                  /* Adds a padding on the top of 10px */
   }
 
+  .email-form-container a {  /* Sets the CSS for the divs a tag */
+    float: none !important;
+  }
+
   .email-form-form {  /* Sets the CSS for the emali form itself */
     padding-top: 20px;                                   /* 20px padding on the top of the element */
     text-align: center;                                  /* Centers all text */
@@ -274,12 +297,10 @@ Online Portfolio Project
   #social-container a {  /* Sets the CSS for the a tag */
     display: inline;                             /* All elements stay on the same line */
     padding: 0;                                  /* Sets the padding to 0 around the element */
+    float: none !important;
   }
 
 }/* End desktop media query */
-
-
-
 
 
 @media only screen and (min-width: 700px) and (max-width: 1023px) {	/* Tablet screen sizes */
@@ -291,13 +312,13 @@ Online Portfolio Project
   Also uses the Georgia font as a fallback if the 2 custom fonts are to fail
   */
   @font-face {
-    font-family: quickSandLocal;
-    src: url('Res/Fonts/Quicksand-Regular.otf');
+    font-family: quickSandLocal !important;
+    src: url('../Fonts/Quicksand-Regular.otf');
   }
 
   html {
-    font-family: 'quickSandLocal', 'Quicksand', Georgia;  /* Sets the font for the entire page*/
-    background-color: lightgrey;                          /* Sets the background colour behind the content */
+    font-family: 'quickSandLocal', 'Quicksand', Georgia  !important;  /* Sets the font for the entire page*/
+    background-color: whitesmoke;                          /* Sets the background colour behind the content */
   }
 
   body {
@@ -392,7 +413,7 @@ Online Portfolio Project
     background-color: #2B2B2B;                            /* Adds a background colour to the naviagation bar */
     color: white;                                         /* Sets all of the font in the navigation bar to be white */
     width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
-    height: 77px;                                         /* Sets the height of the navigation bar to be 77px */
+    height: 70px;                                         /* Sets the height to include the scrollbar(17px) */
   }
 
   a {    /* Sets the CSS for the a links */
@@ -401,7 +422,8 @@ Online Portfolio Project
     text-align: center;                                   /* Centers all of the hyperlink text */
     padding: 20px;                                        /* Adds 20px of padding to each hyperlink on all sides, used to make each link clearer */
     text-decoration: none;                                /* Removes all text-decoration on eahc hyperlink ( such as underlines ) */
-    font-size: 20px;                                      /* Sets the font-size of each hyperlink to be 20px */
+    font-size: 16px;                                      /* Sets the font-size of each hyperlink to be 16px */
+    float: left;                                          /* Floats the elements to the left */
   }
 
   nav a {    /* Sets the CSS for the a links */
@@ -419,157 +441,174 @@ Online Portfolio Project
     border-top: 1px solid #DE1B1B;                        /* Sets the top border */
   }
 
-  #nav-bar-links-table {    /* Sets the CSS for the navigation bar table */
-    width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
-    text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
+  .nav-bar-list ul {    /* The navigation bar list CSS */
+    list-style-type: none;                                 /* Remove the list decoration */
+    margin: 0px !important;                                /* Removes any margins */
+    padding: 0px !important;                               /* Removes any padding */
   }
 
-  #nav-bar-links-table th {  /* Sets the CSS for the navigation bar tables headers */
-    border-left: 1px solid red;                           /* Adds a single red lined border to the left side of each table header */
+  .nav-bar-list li {    /* The navigation bar list CSS */
+    display: inline;                                        /* All elements displayed on the same link */
+    width: 15vw;                                            /* Each list elements width is 15% of the viewports width */
+    text-align: left;                                       /* Aligns all text to the left */
   }
 
-  #title-text {   /* Sets the CSS for the title text, showing my name */
+  .nav-links {    /* The navigation bar list CSS */
+    border-left: 1px solid #DE1B1B;                       /* Gives each cell of the table a small left border */
+    float: right;                                         /* Floats all elements to the right */
+  }
+
+  #nav-links-phone {    /* The navigation bar list CSS */
+    display: none;                                        /* Hides the elements */
+  }
+
+  #title-text {     /* Sets the CSS for the title text, showing my name */
     padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
     font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+    cursor: pointer;                                      /* Lets the mouse show a pointer when hovering over the element */
+    float: left;
   }
 
-  #title-text-phone {      /* The navigation bar for mobile screens */
+  #title-text-phone {     /* Sets the CSS for the title text, showing my name */
     display: none;                                        /* Hides the elements */
   }
 
   #mobile_modal_text {  /* Sets the CSS for the modal text */
-    display: none;
+    display: none;                                        /* Hides the elements */
   }
 
   .close {  /* Sets the CSS for the closing span */
-    display: none;
+    display: none;                                        /* Hides the elements */
   }
 
-.cell-with-border {        /* Each individual cell of the table */
-  border-left: 1px solid red;                         /* */
-}
+  .cell-with-border {        /* Each individual cell of the table */
+    border-left: 1px solid red;                         /* Gives each cell of the table a small left border */
+  }
 
-#centre-text-block {  /* Sets the CSS for the main content block */
-  margin: auto;                                         /* */
-  margin-top: 100px;                                    /* */
-  margin-bottom: 100px;                                 /* */
-  width: 100%;                                          /* */
-}
+  #centre-text-block {  /* Sets the CSS for the main content block */
+    margin: auto;                                         /* Sets the margin to be automatically in the middle of the container */
+    margin-top: 100px;                                    /* Puts a margin of 100px on the top */
+    margin-bottom: 100px;                                 /* Puts a mrgin of 100px on the bottom */
+    width: 100%;                                          /* Sets the width as 100% */
+  }
 
-#centre-text-block-contents {  /* Sets the CSS for the content inside each section */
-  text-align: center;                                   /* */
-  font-size: 20px;                                      /* */
-}
+  #centre-text-block-contents {  /* Sets the CSS for the content inside each section */
+    text-align: center;                                   /* Aligns the text to the centre */
+    font-size: 20px;                                      /* Sets font size to 20px */
+  }
 
-#footer-contents {  /* Sets the footer contents */
-  display: block;                                       /* */
-  padding: 14px 16px;                                   /* */
-  text-decoration: none;                                /* */
-  font-size: 16px;                                      /* */
-}
+  #footer-contents {  /* Sets the footer contents */
+    display: block;                                       /* Displays the footer as a block */
+    padding: 14px 16px;                                   /* Adds padding to the footer */
+    text-decoration: none;                                /* Removes all decoration such as underlines */
+    font-size: 16px;                                      /* Sets font size to 16px */
+  }
 
-.galleryRow {  /* Sets the CSS for the row of images in the project section*/
-  width: 100vw;
-  height: 50vh;
-}
+  .galleryRow {  /* Sets the CSS for the row of images in the project section*/
+    width: 100vw;                                         /* The width is equal to 100% of the viewports width */
+    height: 50vh;                                         /* The height is equal to 50% of the viewports height */
+  }
 
-.galleryColumn {  /* Sets the CSS for each individual column in the project section */
-  float: left;
-  display: grid;
-  width: 20vw;
-  height: 50vh;
-  margin: 2%;
-}
+  .galleryColumn {  /* Sets the CSS for each individual column in the project section */
+    float: left;                                          /* Float all elements left */
+    display: grid;                                        /* Display as a grid to fit them neatly together */
+    width: 20vw;                                          /* Each widht is 20% of the viewports width */
+    height: 50vh;                                         /* Height is 50% of the viewports height */
+    margin: 2%;                                           /* Add a small margin around each element */
+  }
 
-.galleryColumn img {  /* Sets the CSS for each individual img */
-  width: 20vw;
-  height: 20vw;
-}
+  .galleryColumn img {  /* Sets the CSS for each individual img */
+    width: 20vw;                                          /* Width is 20% of viewports width */
+    height: 20vw;                                         /* Height is 20% of viewports width */
+  }
 
-.galleryContent {  /* Sets the CSS for the text in each element of the gallery */
-  background-color: whitesmoke;
-  text-align: center;
-  padding: 10px;
-  border: 1px solid black;
-}
+  .galleryContent {  /* Sets the CSS for the text in each element of the gallery */
+    background-color: whitesmoke;                         /* Sets a background colour */
+    text-align: center;                                   /* Aligns all text to the centre */
+    padding: 10px;                                        /* Adds padding around each element */
+    border: 1px solid black;                              /* Adds a small border */
+  }
 
-#mobile_modal_text {  /* Sets the CSS for the modal text */
-  display: none;
-}
+  #mobile_modal_text {  /* Sets the CSS for the modal text */
+    display: none;                                        /* Hides the element */
+  }
 
-.close {  /* Sets the CSS for the closing span */
-  display: none;
-}
+  .close {  /* Sets the CSS for the closing span */
+    display: none;                                        /* Hides the element */
+  }
 
-#email-form {  /* Sets the CSS for the email form */
-  border: 1px solid black;
-  background-color: #2B2B2B;
-  margin: auto;
-  width: 50vw;
-  opacity: 0.9;
-}
+  #email-form {  /* Sets the CSS for the email form */
+    border: 1px solid black;                              /* Adds a small border */
+    background-color: #2B2B2B;                            /* Adds a background colour */
+    margin: auto;                                         /* Centers the element to the middle */
+    width: 50vw;                                          /* Width is 50% of the viewports width */
+    opacity: 0.9;                                         /* Sets a opacity to hide the background */
+  }
 
-#email-form label {  /* Sets the CSS for the email form labels */
-  color: white;
-  padding-right: 10px;
-}
+  #email-form label {  /* Sets the CSS for the email form labels */
+    color: white;                                         /* All text is set to white */
+    padding-right: 10px;                                  /* 10px padding on the right of the element */
+  }
 
-.email-form-container {  /* Sets the CSS for the email div */
-  width: 60%;
-  background-color: #2B2B2B;
-  text-align: center;
-  margin: auto;
-  border-radius: 5px;
-  border: 3px solid #DE1B1B;
-}
+  .email-form-container {  /* Sets the CSS for the email div */
+    width: 60%;                                         /* Width is set to 60% */
+    background-color: #2B2B2B;                          /* Sets a background colour */
+    text-align: center;                                 /* Aligns all text to the center */
+    margin: auto;                                       /* Elements are automaticallyset to the middle */
+    border-radius: 5px;                                 /* 5px radius around the div */
+    border: 3px solid #DE1B1B;                          /* Small border around the element */
+  }
 
-.email-form-container p, .email-form-container h2 {  /* Sets the CSS for the email form p and h2 tags*/
-  color: whitesmoke;
-}
+  .email-form-container p, .email-form-container h2 {  /* Sets the CSS for the email form p and h2 tags*/
+    color: whitesmoke;                                  /* Sets colour of the font */
+  }
 
-.email-form-container h2 {  /* Sets the CSS for the email form div h2 tag*/
-  padding-top: 10px;
-}
+  .email-form-container h2 {  /* Sets the CSS for the email form div h2 tag*/
+    padding-top: 10px;                                  /* Adds a padding on the top of 10px */
+  }
 
-.email-form-form {  /* Sets the CSS for the email form */
-  padding-top: 20px;
-  text-align: center;
-}
+  .email-form-container a {  /* Sets the CSS for the divs a tag */
+    float: none !important;                             /* Removes the float */
+  }
 
-.email-form-form input, label, textarea {  /* Sets the CSS for the email form input, label and textareas elements */
-  width: 80%;
-  background-color: #dedede;
-  border-radius: 5px;
-  color: black;
-}
+  .email-form-form {  /* Sets the CSS for the email form */
+    padding-top: 20px;                                   /* 20px padding on the top of the element */
+    text-align: center;                                  /* Centers all text */
+  }
 
-#client-msg textarea {  /* Sets the CSS for the email form textarea */
-  height: 20%;
-}
+  .email-form-form input, label, textarea {  /* Sets the CSS for the email form input, label and textareas elements */
+    width: 80%;                                  /* Width set to 80% */
+    background-color: #dedede;                   /*  Background colour set*/
+    border-radius: 5px;                          /* Border of 5px around each element giving rounded corners */
+    color: black;                                /* Font colour set to black */
+  }
 
-.email-form-form input:focus, label:focus, textarea:focus{  /* Sets the CSS for the email form elements when selected */
-  outline: 3px solid #DE1B1B;
-}
+  #client-msg textarea {  /* Sets the CSS for the email form textarea */
+    height: 20%;                                  /* Gives the element a height of 20% of its container */
+  }
 
-#social-container {  /* Sets the CSS for the div holding the social media icons */
-  margin: auto;
-  margin-bottom: 20px;
-}
+  .email-form-form input:focus, label:focus, textarea:focus{  /* Sets the CSS for the email form elements when selected */
+    outline: 3px solid #DE1B1B;                   /* Adds a outline around the element of 3px */
+  }
 
-#social-container img {  /* Sets the CSS for the social media icon divs */
-  width: 10%;
-  height: 10%;
-}
+  #social-container {  /* Sets the CSS for the div holding the social media icons */
+    margin: auto;                                 /* Sets the element to the middle of the container */
+    margin-bottom: 20px;                          /* Adds a small margin on the bottom of the div */
+  }
 
-#social-container a {  /* Sets the CSS for the div holding the social media icons a tags */
-  display: inline;
-  padding: 0;
-}
+  #social-container img {  /* Sets the CSS for the social media icon divs */
+    width: 10%;                                   /* Width is 10% */
+    height: 10%;                                  /* Height is 10% */
+  }
+
+  #social-container a {  /* Sets the CSS for the a tag */
+    display: inline;                             /* All elements stay on the same line */
+    padding: 0;                                  /* Sets the padding to 0 around the element */
+    float: none !important;                      /* Removes the float */
+  }
+
 
 } /* End tablet media query */
-
-
-
 
 
 @media only screen and (max-width: 699px) { /* Phone screen sizes */
@@ -581,13 +620,13 @@ Online Portfolio Project
   Also uses the Georgia font as a fallback if the 2 custom fonts are to fail
   */
   @font-face {
-    font-family: quickSandLocal;
-    src: url('Res/Fonts/Quicksand-Regular.otf');
+    font-family: quickSandLocal !important;
+    src: url('../Fonts/Quicksand-Regular.otf');
   }
 
   html {
-    font-family: 'quickSandLocal', 'Quicksand', Georgia;/* Sets the font for the entire page*/
-    background-color: whitesmoke;                       /* Sets the background colour behind the content */
+    font-family: 'quickSandLocal', 'Quicksand', Georgia  !important;  /* Sets the font for the entire page*/
+    background-color: whitesmoke;                          /* Sets the background colour behind the content */
   }
 
   body {
@@ -645,48 +684,49 @@ Online Portfolio Project
   }
 
   .sectionContents {  /* Sets the CSS for the content inside each section */
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
+    padding-left: 10px;                                   /* Adds some small padding on the left */
+    padding-right: 10px;                                  /* Adds some small padding on the right */
+    text-align: center;                                   /* Centers the text in the container */
   }
 
   #notPhoneMap {     /* Sets the CSS for the map container holding the embeded map */
-    display: none;
+    display: none;                                        /* Hides the element */
   }
 
   #twit-container-desktop {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;
+    display: none;                                        /* Hides the element */
   }
 
   #twit-container-tablet {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;
+    display: none;                                        /* Hides the element */
   }
 
   #twit-container-phone {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    width: 90vw;
-    height: 25vh;
-    margin: auto;
+    width: 90vw;                                          /* Sets the width as 90% of the viewports width */
+    height: 25vh;                                         /* Sets the height as 25% of the viewports height */
+    margin: auto;                                         /* Aligns the element to the middle of the container its in */
   }
 
-  #title-text {
-    padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
-    font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+  #title-text {   /* Sets the CSS for the title text, displaying my name */
+    display: none;
   }
 
   #phoneMap {     /* Sets the CSS for the map container holding the embeded map */
-    margin-top: 120px;
+    margin-top: 120px;                                    /* Adds a margin on the top of 120px */
   }
 
   #title-text-phone {     /* Sets the CSS for the title text, showing my name */
-    padding-left: 5px;
-    display: block;
+    padding-left: 5px;                                    /* Adds padding to the left of the element */
+    display: block;                                       /* Displays the element as a block */
+    float: left;                                          /* Floats the elements left */
+    width: 10vw;
   }
 
   nav {  /* Sets the CSS for the navigation bar table */
-    background-color: #2B2B2B;                               /* Adds a background colour to the naviagation bar */
+    background-color: #2B2B2B;                            /* Adds a background colour to the naviagation bar */
     color: white;                                         /* Sets all of the font in the navigation bar to be white */
     width: 100vw;                                         /* Sets the width of the navigation bar to be 100% of the viewports width */
-    height: 50px;                                          /* Sets the height of the navigation bar to be 7 of the viewports height */
+    height: 70px;                                         /* Sets the height of the navigation bar to be 7 of the viewports height */
   }
 
   a {    /* Sets the CSS for the a links */
@@ -695,7 +735,8 @@ Online Portfolio Project
     text-align: center;                                   /* Centers all of the hyperlink text */
     padding: 20px;                                        /* Adds 20px of padding to each hyperlink on all sides, used to make each link clearer */
     text-decoration: none;                                /* Removes all text-decoration on eahc hyperlink ( such as underlines ) */
-    font-size: 20px;                                      /* Sets the font-size of each hyperlink to be 20px */
+    font-size: 16px;                                      /* Sets the font-size of each hyperlink to be 20px */
+    float: left;
   }
 
   footer {    /* Sets the CSS for the footer */
@@ -708,171 +749,194 @@ Online Portfolio Project
     height: 7vh;                                          /* Sets the height of the footer to be 7% of the viewports height */
   }
 
-  #nav-bar-links-table {  /* Sets the CSS for the navigation bar table */
-    width: 100%;                                          /* Sets the width of the navigation bars table to be 100% of the screen */
-    text-align: left;                                     /* Sets all of the text in the navigation bars table to be aligned to the left of the container */
+  .nav-bar-list ul {    /* The navigation bar list CSS */
+    list-style-type: none;                                 /* Remove the list decoration */
+    margin: 0px !important;                                /* Removes any margins */
+    padding: 0px !important;                               /* Removes any padding */
   }
 
-  #nav-bar-links-table th {  /* Sets the CSS for the navigation bar table headers */
-    border-left: 1px solid red;                           /* Adds a single red lined border to the left side of each table header */
+  .nav-bar-list li {    /* The navigation bar list CSS */
+    display: inline;                                        /* All elements displayed on the same link */
+    width: 15vw;                                            /* Each list elements width is 15% of the viewports width */
+    text-align: left;                                       /* Aligns all text to the left */
   }
 
-  #title-text {
-    padding-left: 20px;                                   /* Puts a 20px padding on the left side of the text */
-    font-size: 24px;                                      /* Sets the font of the title text to be 24px */
+  .nav-links {    /* The navigation bar list CSS */
+    border-left: 1px solid #DE1B1B;                       /* Gives each cell of the table a small left border */
+    float: right;                                         /* Floats all elements to the right */
   }
 
-  .cell-with-border {        /* Each individual cell of the table */
-    border-left: 1px solid red;
-  }
-
-  nav a {        /* Sets CSS for the a tag on the navigation bars */
-    font-size: 16px;
-  }
-
-  .non-phone-table {     /* The navigation bar for mobile screens */
-    display: none;
+  #nav-links-desk {    /* The navigation bar list CSS */
+    display: none;                                        /* Hides the elements */
   }
 
   #centre-text-block {  /* Sets the CSS for the main content block */
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    width: 100%;
+    margin: auto;                                         /* Sets the margin to be automatically in the middle of the container */
+    margin-top: 100px;                                    /* Puts a margin of 100px on the top */
+    margin-bottom: 100px;                                 /* Puts a mrgin of 100px on the bottom */
+    width: 100%;                                          /* Sets the width as 100% */
   }
 
   #centre-text-block-contents {  /* Sets the CSS for the content inside each section */
-    text-align: center;
-    font-size: 20px;
+    text-align: center;                                   /* Aligns the text to the centre */
+    font-size: 20px;                                      /* Sets font size to 20px */
   }
 
   #footer-contents {  /* Sets the footer contents */
-    display: block;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
+    display: block;                                       /* Displays the footer as a block */
+    padding: 14px 16px;                                   /* Adds padding to the footer */
+    text-decoration: none;                                /* Removes all decoration such as underlines */
+    font-size: 16px;                                      /* Sets font size to 16px */
   }
 
   .galleryRow {  /* Sets the CSS for the row of images in the project section*/
-    width: 90vw;
-    height: 50vh;
+    width: 90vw;                                          /* The width is equal to 90% of the viewports width */
+    height: 50vh;                                         /* The height is equal to 50% of the viewports height */
   }
 
   .galleryColumn {  /* Sets the CSS for each individual column in the project section */
-    width: 90vw;
-    margin: 2%;
+    width: 90vw;                                          /* The width is equal to 90% of the viewports width */
+    margin: 2%;                                           /* Adds a small margin of 2% around the entire element */
   }
 
   .galleryColumn img {   /* Sets the CSS for each individual img */
-    display: none;
+    display: none;                                        /* Hides the element */
   }
 
   .galleryContent {  /* Sets the CSS for the text in each element of the gallery */
-    background-color: whitesmoke;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid black;
+    background-color: whitesmoke;                         /* Sets a background colour */
+    text-align: center;                                   /* Aligns all text to the centre */
+    padding: 10px;                                        /* Adds padding around each element */
+    border: 1px solid black;                              /* Adds a small border */
   }
 
   #mobile_modal_text { /* Sets the CSS for the modal text */
-    display: inline;
+    display: inline;                                      /* Displays all elements on the same line */
   }
 
   .modal {    /* Sets the CSS for the modal box */
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 25vh;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.8);
+    display: none;                                        /* Hides the element */
+    position: fixed;                                      /* Fixes its position in the container */
+    z-index: 1;                                           /* Sets the stack position of the element */
+    padding-top: 25vh;                                    /* Adds padding of 25% of the viewports height */
+    left: 0;                                              /* Sets the element to the far left */
+    top: 0;                                               /* Sets the element to the top */
+    width: 100vw;                                         /* Width is 100% of viewports width */
+    height: 100vh;                                        /* Height is 100% of viewports height */
+    overflow: hidden;                                     /* Hides the scrolling option */
+    background-color: rgba(0,0,0,0.8);                    /* Adds a specific background colour */
   }
 
   .modal-content {  /* Sets the CSS for the modal image */
-    margin: auto;
-    display: block;
+    margin: auto;                                         /* All elements in the div are set to the middle */
+    display: block;                                       /* Displays the div in a block */
   }
 
   #caption {  /* Sets the modal image caption */
-    margin: auto;
-    display: block;
-    text-align: center;
-    color: white;
+    margin: auto;                                         /* All elements in the div are set to the middle */
+    display: block;                                       /* Displays the div in a block */
+    text-align: center;                                   /* All text is centered inside the container */
+    color: white;                                         /* Font colour is set to white */
   }
 
   .close {  /* Sets the CSS for the modal close button*/
-    position: absolute;
-    top: 0px;
-    right: 15px;
-    color: white;
-    font-size: 40px;
+    position: absolute;                                   /* Sets the position of the element */
+    top: 0px;                                             /* Sets the element to be at the top of the window */
+    right: 15px;                                          /* Sets the element to be 15px from the right side */
+    color: white;                                         /* Colour of text is set to white */
+    font-size: 40px;                                      /* All font size is set to 40px */
   }
 
   #email-form {  /* Sets the CSS for the email form */
-    border: 1px solid black;
-    background-color: #2B2B2B;
-    margin: auto;
-    width: 50vw;
-    opacity: 0.9;
+    border: 1px solid black;                              /* Adds a small border */
+    background-color: #2B2B2B;                            /* Adds a background colour */
+    margin: auto;                                         /* Centers the element to the middle */
+    width: 50vw;                                          /* Width is 50% of the viewports width */
+    opacity: 0.9;                                         /* Sets a opacity to hide the background */
   }
 
   #email-form label {  /* Sets the CSS for the email form labels */
-    color: white;
-    padding-right: 10px;
+    color: white;                                         /* All text is set to white */
+    padding-right: 10px;                                  /* 10px padding on the right of the element */
   }
 
   .email-form-container {  /* Sets the CSS for the email form div */
-    width: 60%;
-    height: 50vh;
-    background-color: #2B2B2B;
-    text-align: center;
-    margin: auto;
-    border-radius: 5px;
-    border: 3px solid #DE1B1B;
+    width: 60%;                                         /* Width is set to 60% */
+    background-color: #2B2B2B;                          /* Sets a background colour */
+    text-align: center;                                 /* Aligns all text to the center */
+    margin: auto;                                       /* Elements are automaticallyset to the middle */
+    border-radius: 5px;                                 /* 5px radius around the div */
+    border: 3px solid #DE1B1B;                          /* Small border around the element */
   }
 
   .email-form-container p, .email-form-container h2 {   /* Sets the CSS for the email form div p and h2 tags */
-    color: whitesmoke;
+    color: whitesmoke;                                  /* Sets colour of the font */
   }
 
   .email-form-container h2 {  /* Sets the CSS for the email form h2 tags */
-    padding-top: 10px;
+    padding-top: 10px;                                  /* Adds a padding on the top of 10px */
+  }
+
+  .email-form-container a {  /* Sets the CSS for the divs a tag */
+    float: none !important;
   }
 
   .email-form-form {  /* Sets the CSS for the email forms actual form */
-    padding-top: 20px;
-    text-align: center;
+    padding-top: 20px;                                   /* 20px padding on the top of the element */
+    text-align: center;                                  /* Centers all text */
   }
 
   .email-form-form input, label, textarea {  /* Sets the CSS for the email form input, label and textarea*/
-    width: 80%;
-    background-color: #dedede;
-    border-radius: 5px;
-    color: black;
+    width: 80%;                                  /* Width set to 80% */
+    background-color: #dedede;                   /*  Background colour set*/
+    border-radius: 5px;                          /* Border of 5px around each element giving rounded corners */
+    color: black;                                /* Font colour set to black */
   }
 
   #client-msg textarea {  /* Sets the CSS for the textarea elements */
-    height: 20%;
+    height: 20%;                                 /* Gives the element a height of 20% of its container */
   }
 
   .email-form-form input:focus, label:focus, textarea:focus {  /* Sets the CSS for the elements when selected */
-    outline: 3px solid #DE1B1B;
+    outline: 3px solid #DE1B1B;                  /* Adds a outline around the element of 3px */
   }
 
   #social-container {  /* Sets the CSS for the div holding the social media icons */
-    margin: auto;
+    margin: auto;                                /* Sets the elements to the middle of the container */
   }
 
   #social-container img {  /* Sets the CSS for each image in the div */
-    width: 10%;
+    width: 10%;                                  /* Width is 10% */
   }
 
   #social-container a {  /* Sets the CSS for the a tag */
-    display: inline;
-    padding: 0;
+    display: inline;                             /* All elements stay on the same line */
+    padding: 0;                                  /* Sets the padding to 0 around the element */
+    float: none !important;                      /* Removes the float */
   }
 
 } /* End phone media query */
+
+
+@media only screen and (max-width: 510px) { /* Smaller phone screen sizes */
+
+  #title-text-phone {     /* Sets the CSS for the title text, showing my name */
+    display: none;                                   /* Hides the element */
+  }
+
+  #nav-links-phone {    /* The navigation bar list CSS */
+    font-size: 14px;                                 /* Sets the font size to fit better in the navigation table */
+  }
+
+  .aboutMe h2 {   /* The about me section of the website */
+    display: none;                                   /* Hides the elements */
+  }
+
+  .aboutMe {    /* The about me section of the website */
+    padding-left: 10px;                              /* Adds a small padding to the left side of the container */
+  }
+
+  #phoneMap {     /* Sets the CSS for the map container holding the embeded map */
+    display: none;                                   /* Hides the element */
+  }
+}/* End smaller phone media query */
