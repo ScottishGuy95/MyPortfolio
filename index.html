@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body onload="currentSlide();">
     <header>
         <nav>
 
@@ -41,8 +41,8 @@
               <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(4)">Contact</a>
             </li>
             <li>
-              <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(3)">Qualifications</a>
-              <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(3)">Qualifications</a>
+              <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(3)">Skills</a>
+              <a href="#" class="nav-links" id="nav-links-phone" onclick="clickScrollPhone(3)">Skills</a>
             </li>
             <li>
               <a href="#" class="nav-links" id="nav-links-desk" onclick="clickScroll(2)">Experience</a>
@@ -63,25 +63,80 @@
 
         <div class="section one"><!-- About Me -->
           <div class="sectionContents aboutMe">
-            <div id="aboutMe">
+            <div id="aboutMe" style="padding-right: 10px">
               <h1>About Me</h1>
-              <div id="twit-container-desktop">
-                <a class="twitter-timeline" data-width="300" data-height="600" data-dnt="true" data-theme="dark" href="https://twitter.com/RobertGordonUni?ref_src=twsrc%5Etfw">Tweets by RobertGordonUni</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              </div><!-- End twit-container-desktop -->
 
-              <div id="twit-container-tablet">
-                <a class="twitter-timeline" data-width="300" data-height="300" data-dnt="true" data-theme="dark" href="https://twitter.com/RobertGordonUni?ref_src=twsrc%5Etfw">Tweets by RobertGordonUni</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              </div><!-- End twit-container-tablet -->
+              <h2 class="typewriterBlock">
+                <p class="typewrite" data-type='[ "Hi, Im Liam, a Scottish computing student.", "Attending Robert Gordon University, Aberdeen.", "Year 2, BSc (Hons) Cyber Security." ]'>
+                  <span class="wrap"></span>
+                </p>
+              </h2>
 
-              <p><h2>Hello.</h2>I'm Liam Clifford, a Scottish computing student. I am hard working, eager and willing to adapt to constantly update my skills and gain new opportunities. Throughout my school and University years, I have been working on increasing my abilities to provide the best results any client could expect. I believe that the most important thing is gaining a strong client releationship.</p>
-              <p>I am currently in my first year of my BSc (Hons) Cyber Security, attending Robert Gordon's University in Aberdeen, Scotland.</p>
+              <script>
+                var TxtType = function(el, toRotate, period) {
+                        this.toRotate = toRotate;
+                        this.el = el;
+                        this.loopNum = 0;
+                        this.period = parseInt(period, 10) || 2000;
+                        this.txt = '';
+                        this.tick();
+                        this.isDeleting = false;
+                    };
 
-              <div id="twit-container-phone">
-                <a class="twitter-timeline" data-width="400" data-height="300" data-dnt="true" data-theme="dark" href="https://twitter.com/RobertGordonUni?ref_src=twsrc%5Etfw">Tweets by RobertGordonUni</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              </div><!-- End twit-container-phone -->
+                    TxtType.prototype.tick = function() {
+                        var i = this.loopNum % this.toRotate.length;
+                        var fullTxt = this.toRotate[i];
 
-              <iframe id="notPhoneMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2166.0901800888273!2d-2.142813817081789!3d57.11842190567399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488410483d2f0941%3A0x5d8969688e77366a!2sRobert+Gordon+University!5e0!3m2!1sen!2suk!4v1511870745809" width="600" height="200" frameborder="0s" style="border: 1px solid black;" allowfullscreen></iframe><!-- Google Map - embded content -->
-              <iframe id="phoneMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2166.0901800888273!2d-2.142813817081789!3d57.11842190567399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488410483d2f0941%3A0x5d8969688e77366a!2sRobert+Gordon+University!5e0!3m2!1sen!2suk!4v1511870745809" width="400" height="200" frameborder="0s" style="border: 1px solid black;" allowfullscreen></iframe><!-- Google Map - embded content -->
+                        if (this.isDeleting) {
+                        this.txt = fullTxt.substring(0, this.txt.length - 1);
+                        } else {
+                        this.txt = fullTxt.substring(0, this.txt.length + 1);
+                        }
+
+                        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+                        var that = this;
+                        var delta = 200 - Math.random() * 100;
+
+                        if (this.isDeleting) { delta /= 2; }
+
+                        if (!this.isDeleting && this.txt === fullTxt) {
+                        delta = this.period;
+                        this.isDeleting = true;
+                        } else if (this.isDeleting && this.txt === '') {
+                        this.isDeleting = false;
+                        this.loopNum++;
+                        delta = 500;
+                        }
+
+                        setTimeout(function() {
+                        that.tick();
+                        }, delta);
+                    };
+
+                    window.onload = function() {
+                        var elements = document.getElementsByClassName('typewrite');
+                        for (var i=0; i<elements.length; i++) {
+                            var toRotate = elements[i].getAttribute('data-type');
+                            var period = elements[i].getAttribute('data-period');
+                            if (toRotate) {
+                              new TxtType(elements[i], JSON.parse(toRotate), period);
+                            }
+                        }
+                        // INJECT CSS
+                        var css = document.createElement("style");
+                        css.type = "text/css";
+                        css.innerHTML = ".typewrite > .wrap { padding-bottom: 10px; }";
+                        document.body.appendChild(css);
+
+                        //Call our method from our JS file, so that we can call this method during the above onload process
+                        currentSlide();
+                    };
+              </script>
+
+              <p>I am hard working, eager and willing to adapt to constantly update my skills and gain new opportunities. Throughout my school and University years, I have been working on increasing my abilities to provide the best results any client could expect. I believe that the most important thing is gaining a strong client releationship.</p>
+              <p>During my first year, I was awarded the ConocoPhillips award due to outstanding acheivement.</p>
+
             </div><!-- End aboutMe -->
           </div><!-- End sectionContents aboutMe -->
         </div><!-- End section one -->
@@ -90,49 +145,49 @@
           <div class="sectionContents portfolio">
             <div id="portfolio">
               <h1>Projects</h1>
-              <div id="imageGallery">
-                <div class="galleryRow">
 
-                  <div class="galleryColumn">
-                    <div class="galleryContent">
-                      <img src="Res\Images\Portfoli_CouncilAppMobile.PNG" alt="Council website">
-                      <h3>Council website<p id="mobile_modal_text" onclick="displayImg1()"> - View image</p></h3>
-                      <p>A responsive JQuery based website, designed for all devices to display information for the Highland council.</p>
-                    </div><!-- End galleryContent -->
-                  </div><!-- End galleryColumn -->
+              <div class="slideshow-container">
 
-                  <div class="galleryColumn">
-                    <div class="galleryContent">
-                      <img src="Res\Images\Portfoli_JonJo.PNG" alt="Custom pizza app">
-                      <h3>Pizza Delivery App<p id="mobile_modal_text" onclick="displayImg2()"> - View image</p></h3>
-                      <p>A custom pizza delivery app, responsive, PHP & JS based. Users purchase pre-set pizzas or create their own.</p>
-                    </div><!-- End galleryContent -->
-                  </div><!-- End galleryColumn -->
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 6</div>
+                  <img src="Res\Images\Portfolio_ButtieBites.PNG" alt="Buttie Bites" style="width:100%">
+                  <div class="text">Buttie Bites - Java based sandwarch ordering program. Allows the user to create their own or order from a pre-set menu. Admin settings available.</div>
+                </div>
 
-                  <div class="galleryColumn">
-                    <div class="galleryContent">
-                      <img src="Res\Images\Portfoli_Sokoban.PNG" alt="Sokoban - Java game">
-                      <h3>Sokoban - Java<p id="mobile_modal_text" onclick="displayImg3()"> - View image</p></h3>
-                      <p>A pirate themed take on the classic Sokoban game made using Java. Users control a ship to move an object to its goal.</p>
-                    </div><!-- End galleryContent -->
-                  </div><!-- End galleryColumn -->
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 6</div>
+                  <img src="Res\Images\Portfolio_VMH.PNG" alt="VMH Project" style="width:100%">
+                  <div class="text">VMH - Team project to create a hub for finding infomration on media. Users can search for a film/TV/music/sports/game to find out information about, such as where to watch and cost. You can also book events automatically, by passing your booking information to VMH, which will then book your film/event the moment booking opens.</div>
+                </div>
 
-                  <div class="galleryColumn">
-                    <div class="galleryContent">
-                      <img src="Res\Images\Portfoli_Stellar_Game.PNG" alt="Educational game - Stellar Speller">
-                      <h3>Stellar Speller<p id="mobile_modal_text" onclick="displayImg4()"> - View image</p></h3>
-                      <p>School game, JS and PHP based. Control a small ship and shoot incoming letters to spell a word. Pupil/Teacher systems to track progress.</p>
-                    </div><!-- End galleryContent -->
-                  </div><!-- End galleryColumn -->
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 6</div>
+                  <img src="Res\Images\Portfolio_EtchASketch.jpg" alt="Arduino Project" style="width:100%">
+                  <div class="text">Etch a Sketch created using Processing/Arduino. Using an arduino microcontroller. I created a small program using Processing to allow the user to control hardware on the arduino to allow visual reponse on screen, similar to an EtchASketch. </div>
+                </div>
 
-                  <div id="imgModal" class="modal">
-                    <span class="close" onclick="closeModal()">Close</span>
-                    <img class="modal-content" id="imageArea">
-                    <div id="caption"></div>
-                  </div><!-- End imgModal -->
+                <div class="mySlides fade">
+                  <div class="numbertext">4 / 6</div>
+                  <img src="Res\Images\Portfolio_CouncilAppMobile.PNG" alt="Council website" style="width:100%">
+                  <div class="text">A responsive JQuery/PHP based website for local councils. This website, which is designed to be viewed on a range of devices, allows users to view a large range of information from your local council. Primarily made using JQuery with PHP used to handle any authentication, this application was made as part of my College Mobile Development module.</div>
+                </div>
 
-                </div><!-- End galleryRow -->
-              </div><!--End imageGallery -->
+                <div class="mySlides fade">
+                  <div class="numbertext">5 / 6</div>
+                  <img src="Res\Images\Portfolio_JonJo.PNG" alt="JonJo Pizza" style="width:100%">
+                  <div class="text">A pizza ordering website, using PHP/JavaScript. This application is responsive to allow users to view the application across any device. JonJo allowed users to create custom pizzas or purchase from a pre-set list of pizzas. SQL was used to allow database access and storage of the data.</div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">6 / 6</div>
+                  <img src="Res\Images\Portfolio_Stellar_Game.PNG" alt="Stellar Speller" style="width:100%">
+                  <div class="text">Stellar Speller - Educational spelling game for children. Created as part of my year long Graded Unit module during College. Stellar Speller was aimed at giving children a fun and easy way to improve their spelling. Users select a word, as set by its difficulty, then control a small ship to shoot the incomming asterorids to spell a given word. Teachers are able to monitor users progression and view game results on each user and add/remove words.</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+              </div><!-- End Slideshow Container -->
             </div><!-- End portfolio -->
           </div><!-- End sectionContents portfolio -->
         </div><!-- End sections two -->
@@ -141,17 +196,22 @@
           <div class="sectionContents exp">
             <div id="exp">
               <h1>Experience</h1>
+              <p>Before starting College and University, I worked at a few roles to try and help me find out what kind of future I wanted. I also worked alongside Barnardo's Works, a local employability charity that allowed me to do some volunteer work with The British Heart Foundation. This was based around electronic's repairing and stock management. I was then given the oppertunity to do Till Training with Tesco, where I was able to put my customer service skills to the test.</p>
+
               <h4>2013 - 2014 - ReBOOT</h4>
-              <p>Computing recycling company. Computer creation, testing and delivery to Scottish schools.</p>
+              <p>Computing recycling company. As part of a team, I helped with the creation of a range of Windows based desktop systems. This was a very fast paced task as the systems were contracted for local schools. As part my role, there was a range of policies involved with the testing procedures to ensure the machines were suitable for distribution. This was a good role for helping me to develop my customer service skills as I was able to deal with the deliveries with schools.</p>
 
               <h4>2013 - 2014 - ILM</h4>
-              <p>Local electronic recycling centre. Dismantling computers and laptops, and the collection of computer systems all around Scotland.</p>
+              <p>Local electronic recycling centre. Following on from ReBOOT, I began working with a the local recycling centre. This was a great next step, as it allowed me to advance my hardware skills while still allowing me to to work with clients and customers. I handeled the dismantling of computers and laptops. This was a team based task, due to the quantity of machines we were working with and the task of sorting each system into its main components. As a drivers mate, I was tasked with going out to a range of recycling centres across Scotland to pick up and deliver all the electronic waste.</p>
 
               <h4>2014 - 2017 - UHI</h4>
-              <p>I attended the Univerity of The Highlands and Islands in Inverness to study Computing - ending with a HNC.</p>
+              <p>I attended the Univerity of The Highlands and Islands in Inverness to study Computing - leaving with a HNC. This was a great addition to my studies, as I was able to gain knowledge across a broad range of studies. I worked using new skills I had never had access to before, such as the Ethical Hacking module. This involved using the OS Kali Linux, which allowed me to work using Industry recognised software. This was also a feature of my Forensics project, where we were given a crime scene and allowed to use software such as OSForensics. Following this, I worked on my Networking skills, linking this module with the creation and management of servers on my Server Management module. Web Design allowed me to create a responsive websites, using languages such as PHP, JavaScript, CSS and HTML. Modules: Ethical Hacking, Forensics, Server Management on Linux, Mobile Application Web Design, Networking, Relational Database and Web Design for desktop and mobile browsers.</p>
+
+              <h4>2017 - Department of Work & Pensions, Summer Work Experience</h4>
+              <p>As part of my primarily customer service based role, I dealt with the clients and deliveries to the office, a range of admin duties inc. filing according to Govermental standards, arranging and managing appointments/meetings and helping clients with the creation of CV’s and job applications. This was a great experience as it allowed me to focus less on the techical side of my skills, and put more work on my customer service skills and learn managerial tasks and duties as a member of a team.</p>
 
               <h4>2017 - Ongoing - RGU</h4>
-              <p>I am currently attending Robert Gordon's University in Aberdeen to complete my BSc (Hons) Cyber Security degree. </p>
+              <p>I am currently attending Robert Gordon's University in Aberdeen to complete my BSc (Hons) Cyber Security degree. This is a big stepup from my College courses, but is allowing me to put my skills and knowledge I have gained so far to the test, and advance them to industry standards. I have been able to progress my programming skills, focusing on Object Orientated Programming using Java, this has included a recent project - Buttie Bites, a custom sandwich ordering program. I have also worked on my software development modules, creating functioning websites such as my portfolio using new techniques with HTML5, CSS and JavaScript. Working with my classmates on team projects, such as VMH, our Visual Media Hub, I have been able to understand how managerial roles work, pushing my communication skills, leaderships skills and time management as we were tasked and expected to work as a team would in a actual career. Our networking module, Routing & Switching, allowed us to progress our networking knowledge, working to Cisco standards. Modules include: Routing and Switching on networks, Object Orientated Programming using Java, Advanced Software Design and Development, Database Systems, Real World Project and Professional Skills, hardware using Arduinos and JavaScript.</p>
             </div><!-- End exp -->
           </div><!-- End sectionContents exp -->
         </div><!-- End section three -->
@@ -159,30 +219,42 @@
         <div class="section four"><!-- Skills -->
           <div class="sectionContents skills">
             <div id="skills">
-              <h1>Qualifications</h1>
-              <p>I am always attempting to improve my skills to ensure I am always keeping up with modern technologies and allowing myself to make the best content i can.</p>
+              <h1>Skills</h1>
+              <p>I am always attempting to improve my skills to ensure I am always keeping up with modern technologies and allowing myself to make the best content I can.</p>
 
               <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                    HTML
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                    Microsoft Office
                 </div>
               </div><!-- End progress -->
 
               <div class="progress">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                  HTML
+                </div>
+              </div><!-- End progress -->
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:75%">
                   CSS
                 </div>
               </div><!-- End progress -->
 
               <div class="progress">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                  PHP
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                  Cyber Security
                 </div>
               </div><!-- End progress -->
 
               <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                    javascript
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                  Java
+                </div>
+              </div><!-- End progress -->
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:45%">
+                    PHP
                 </div>
               </div><!-- End progress -->
 
@@ -193,8 +265,14 @@
               </div><!-- End progress -->
 
               <div class="progress">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-                  Java
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                  JavaScript
+                </div>
+              </div><!-- End progress -->
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                  Hardware
                 </div>
               </div><!-- End progress -->
 
@@ -216,27 +294,19 @@
 
               <div class="email-form-container">
                 <h2>Let's get in touch!</h2>
-                <p>Just pop in your message and I will get back in touch</p>
                 <form class="email-form-form" action="mailto:1713749@rgu.ac.uk?subject=" method="POST" enctype="text/plain">
                   <p id="client-msg">
                     <textarea id="clientmsg" name="client-msg" type="text" placeholder="Enter your message here"></textarea>
                   </p>
                   <div id="form-submit">
-                    <input type="submit" value="send" id="form-button">
+                    <input type="submit" value="Send" id="form-button">
                   </div><!-- End for-submit -->
+                  <p>You can also find me on LinkedIn below!</p>
+                  <div id="social-container">
+                    <a href="https://www.linkedin.com/in/liamclifford95/"><img src="Res/Images/Icons/linkedIn.png" alt="LinkedIn icon"></a>
+                  </div>
                 </form>
 
-                <p>Or contact me through one of these!</p>
-                <div id="social-container">
-                  <a href="https://en-gb.facebook.com/robertgordonuniversity/"><img src="Res/Images/Icons/Facebook.png" alt="Facebook icon"></a>
-                  <a href="https://github.com/ScottishGuy95/"><img src="Res/Images/Icons/Github.png" alt="GitHub icon"></a>
-                  <a href="https://plus.google.com/+robertgordonuniversity"><img src="Res/Images/Icons/Google+.png" alt="Google+ icon"></a>
-                  <a href="https://www.pinterest.co.uk/robertgordonuni/"><img src="Res/Images/Icons/Pinterest.png" alt="Pinterest icon"></a>
-                  <a href="https://www.tumblr.com/"><img src="Res/Images/Icons/Tumblr.png" alt="Tumblr icon"></a>
-                  <a href="https://twitter.com/RobertGordonUni"><img src="Res/Images/Icons/Twitter.png" alt="Twitter icon"></a>
-                </div>
-
-                <a target="_blank" href="https://vecteezy.com">Icons by - Vecteezy.com</a>
               </div><!-- End email-form-container -->
 
             </div><!--End contactMe -->
@@ -249,7 +319,7 @@
     <footer>
         <div id="footer-contents">
           <p style="float: left;">© Liam Clifford</p>
-          <p style="float: right;">Last Updated - 06/12/17</p>
+          <p style="float: right;">Last Updated - 23/01/18</p>
         </div><!-- End footer-contents -->
     </footer>
 
