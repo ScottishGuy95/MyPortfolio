@@ -87,31 +87,13 @@
   .sectionContents {  /* Sets the CSS for the content inside each section */
     padding: 2%;                                          /* Gives padding around each element */
     font-weight: bold !important;                         /* Ensures all of the font are bold */
-    font-size: 18px;                                      /* Sets font size */
+    /*font-size: 18px;                                      /* Sets font size */
   }
 
   .aboutMe {        /* Sets specific CSS to the aboutMe section */
     text-align: left;                                     /* Aligns all text to the left */
     font-size: 18px;                                      /* Sets the font size */
     padding-right: 35vw;                                  /* Gives padding to the right side of the element */
-  }
-
-  #twit-container-desktop {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    position: absolute;                                   /* Sets the position */
-    top: 25px;                                            /* Sets the element to the top of the screen */
-    right: 15px;                                          /* Sets the element slightly right of the screen */
-  }
-
-  #twit-container-tablet {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;                                        /* Hides the element */
-  }
-
-  #twit-container-phone {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;                                        /* Hides the element */
-  }
-
-  #phoneMap {     /* Sets the CSS for the map container holding the embeded map */
-    display: none;                                      /* Hides the element */
   }
 
   nav {    /* Sets the CSS for the nav bar */
@@ -265,7 +247,6 @@
   }
 
   .email-form-form {  /* Sets the CSS for the emali form itself */
-    padding-top: 20px;                                   /* 20px padding on the top of the element */
     text-align: center;                                  /* Centers all text */
   }
 
@@ -298,6 +279,86 @@
     display: inline;                             /* All elements stay on the same line */
     padding: 0;                                  /* Sets the padding to 0 around the element */
     float: none !important;
+  }
+
+/* Slideshow code */
+  .mySlides {
+    display: none;
+  }
+
+  .mySlides img {
+    vertical-align: middle;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    /*position: absolute;*/
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: black;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
   }
 
 }/* End desktop media query */
@@ -351,18 +412,18 @@
   /* Gives each section its own details and colours */
   .one {
     border-right: 1px solid #DE1B1B;                      /* Give each section a small red border */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    width: 95vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .two {
     border-right: 1px solid #DE1B1B;                      /* Give each section a small red border */
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+    height: 75vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .three {
     border-right: 1px solid #DE1B1B;                      /* Give each section a small red border */
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vw;                                        /* Sets the width to be 100% of viewports width */
+    height: 150vw;                                        /* Sets the width to be 100% of viewports width */
   }
   .four {
     border-right: 1px solid #DE1B1B;                      /* Give each section a small red border */
@@ -378,7 +439,7 @@
   .sectionContents {  /* Sets the CSS for the content inside each section */
     padding: 2%;                                          /* Gives padding around each element */
     font-weight: bold !important;                         /* Ensures all of the font are bold */
-    font-size: 18px;                                      /* Sets font size */
+    /*font-size: 18px;                                      /* Sets font size */
   }
 
   .aboutMe {        /* Sets specific CSS to the aboutMe section */
@@ -387,26 +448,8 @@
     padding-right: 45vw;                                  /* Gives padding to the right side of the element */
   }
 
-  #twit-container-desktop { /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;                                          /* hides the element */
-  }
-
-  #twit-container-tablet { /* Sets the CSS for the twitter container holding the embeded twitter */
-    position: absolute;                                   /* Sets the position */
-    top: 25px;                                            /* Sets the element to the top of the screen */
-    right: 15px;                                          /* Sets the element slightly right of the screen */
-  }
-
-  #twit-container-phone { /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;                                        /* hides the element */
-  }
-
-  #notPhoneMap {  /* Sets CSS for the embeded google map div */
-    height: 200px;                                       /* Sets the height to be 200px */
-  }
-
-  #phoneMap {   /* Sets the CSS for the embded google map div */
-    display: none;                                        /* Hides the element */
+  #aboutMe {
+    padding-right: 10px !important;
   }
 
   nav {    /* Sets the CSS for the nav bar */
@@ -606,6 +649,85 @@
     padding: 0;                                  /* Sets the padding to 0 around the element */
     float: none !important;                      /* Removes the float */
   }
+  /* Slideshow code */
+    .mySlides {
+      display: none;
+    }
+
+    .mySlides img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: black;
+      font-size: 15px;
+      padding: 8px 12px;
+      /*position: absolute;*/
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: black;
+      font-size: 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
 
 
 } /* End tablet media query */
@@ -659,28 +781,28 @@
   .one {
     border-bottom: 1px solid #DE1B1B;                     /* Give each section a small red border */
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+    height: 50vh;                                        /* Sets the width to be 100% of viewports width */
   }
   .two {
     border-bottom: 1px solid #DE1B1B;                     /* Give each section a small red border */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+    width: 95vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 55vh;                                        /* Sets the width to be 100% of viewports width */
 
   }
   .three {
     border-bottom: 1px solid #DE1B1B;                     /* Give each section a small red border */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+    width: 95vw;                                         /* Sets the width to be 100% of viewports width */
+    height: 200vh;                                        /* Sets the width to be 100% of viewports width */
   }
   .four {
     border-bottom: 1px solid #DE1B1B;                     /* Give each section a small red border */
-    width: 100vw;                                         /* Sets the width to be 100% of viewports width */
+    width: 95vw;                                         /* Sets the width to be 100% of viewports width */
     height: 100vh;                                        /* Sets the width to be 100% of viewports width */
   }
   .five {
     border-bottom: 1px solid #DE1B1B;                     /* Give each section a small red border */
     width: 100vw;                                         /* Sets the width to be 100% of viewports width */
-    height: 100vh;                                        /* Sets the width to be 100% of viewports width */
+    height: 55vh;                                        /* Sets the width to be 100% of viewports width */
   }
 
   .sectionContents {  /* Sets the CSS for the content inside each section */
@@ -689,31 +811,10 @@
     text-align: center;                                   /* Centers the text in the container */
   }
 
-  #notPhoneMap {     /* Sets the CSS for the map container holding the embeded map */
-    display: none;                                        /* Hides the element */
-  }
-
-  #twit-container-desktop {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;                                        /* Hides the element */
-  }
-
-  #twit-container-tablet {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    display: none;                                        /* Hides the element */
-  }
-
-  #twit-container-phone {   /* Sets the CSS for the twitter container holding the embeded twitter */
-    width: 90vw;                                          /* Sets the width as 90% of the viewports width */
-    height: 25vh;                                         /* Sets the height as 25% of the viewports height */
-    margin: auto;                                         /* Aligns the element to the middle of the container its in */
-  }
-
   #title-text {   /* Sets the CSS for the title text, displaying my name */
     display: none;
   }
 
-  #phoneMap {     /* Sets the CSS for the map container holding the embeded map */
-    margin-top: 120px;                                    /* Adds a margin on the top of 120px */
-  }
 
   #title-text-phone {     /* Sets the CSS for the title text, showing my name */
     padding-left: 5px;                                    /* Adds padding to the left of the element */
@@ -915,13 +1016,98 @@
     float: none !important;                      /* Removes the float */
   }
 
+  /* Slideshow code */
+    .mySlides {
+      display: none;
+    }
+
+    .mySlides img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: black;
+      font-size: 15px;
+      padding: 8px 12px;
+      /*position: absolute;*/
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: black;
+      font-size: 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+
 } /* End phone media query */
 
 
 @media only screen and (max-width: 510px) { /* Smaller phone screen sizes */
 
+  #aboutMe {
+    padding-right: 10px;
+  }
+
   #title-text-phone {     /* Sets the CSS for the title text, showing my name */
-    display: none;                                   /* Hides the element */
+    display: block;                                   /* Hides the element */
   }
 
   #nav-links-phone {    /* The navigation bar list CSS */
@@ -936,7 +1122,84 @@
     padding-left: 10px;                              /* Adds a small padding to the left side of the container */
   }
 
-  #phoneMap {     /* Sets the CSS for the map container holding the embeded map */
-    display: none;                                   /* Hides the element */
-  }
+  /* Slideshow code */
+    .mySlides {
+      display: none;
+    }
+
+    .mySlides img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: black;
+      font-size: 15px;
+      padding: 8px 12px;
+      /*position: absolute;*/
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: black;
+      font-size: 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
 }/* End smaller phone media query */
